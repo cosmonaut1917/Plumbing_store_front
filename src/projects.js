@@ -1,28 +1,16 @@
-import weather from '../src/images/weather.png'
-import garden from '../src/images/garden.png'
-import winging from '../src/images/winging.png'
+import action_filters from 'https://static.wixstatic.com/media/50ea6e_062d1a3d32c044afb32b8e1bb3135411~mv2.png/v1/fill/w_222,h_58,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/50ea6e_062d1a3d32c044afb32b8e1bb3135411~mv2.png'
+import peters from 'https://petersonplumbingsupply.com/uploads/3/5/3/0/35304437/1598187.jpg'
 
 const projects = [
     {
-        title: "Tell Me The Weather",
-        url: "https://tronmitch.github.io/tellmetheweather/",
-        repo: "https://github.com/tronmitch/tellmetheweather", 
-        description: "Web page desinged for viewing the weather",
-        image: weather
+        alt: "Action Filters",
+        url: "https://www.actionfilters.com/",
+        image: action_filters
     },
     {
-        title: "Winging It Around World",
-        url: "https://lepidopterarium-ac74b3d1a334.herokuapp.com/",
-        repo: "https://github.com/RockyWearsAHat/lepidopterarium", 
-        description: "Prototype Web for the lepoditerriam at thanksgiving point in alpine Utah",
-        image: winging
-    },
-    {
-        title: "Garden Planner",
-        url: "https://captianbeau.github.io/Garden-Planner/",
-        repo: "https://github.com/Captianbeau/Garden-Planner", 
-        description: "Web page designed to help plan your garden",
-        image: garden
+        alt: "ASC",
+        url: "https://www.asc-es.com/",
+        image: peters
     },
 ]
 
