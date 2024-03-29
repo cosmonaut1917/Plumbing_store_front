@@ -11,7 +11,7 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Company from './pages/Company';
 import Suppliers from './pages/Suppliers'
-import projectData from '../src/projects'
+import supplierData from '../src/suppliers'
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/Suppliers',
-        element: <Suppliers projects={projectData} />,
+        element: <Suppliers suppliers={supplierData}/>,
       },
     ],
   },

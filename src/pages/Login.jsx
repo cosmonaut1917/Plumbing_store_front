@@ -6,7 +6,7 @@ export default function Login() {
 // Define state for each input field
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
-const [message, setMessage] = useState('');
+// const [message, setMessage] = useState('');
 const [phone, setPhone] = useState('');
 
   const handleSubmit = (event) =>{

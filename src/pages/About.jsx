@@ -1,5 +1,4 @@
 import '../App.css'
-import img from '../images/profile.png'
 
 export default function About() {
   return (

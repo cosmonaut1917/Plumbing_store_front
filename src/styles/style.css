@@ -101,3 +101,9 @@ footer{
     padding-left: 200px;
     padding-right: 200px;
 }
+
+.supplier-img{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}

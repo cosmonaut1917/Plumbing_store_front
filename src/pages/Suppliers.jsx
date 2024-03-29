@@ -19,19 +19,19 @@ const styles = {
   },
 };
 
-function Suppliers({ projects }) {
-  console.log(projects)
+function Suppliers({ suppliers }) {
+  console.log(suppliers)
   return (
     <section style={styles.card}>
       {/* <h2 style={styles.heading}>Work</h2> */}
       <hr className="solid" />
       <div className="parent-img">
-        {projects.map(( project )=> (
-        <div key = {project.title}> 
-        <h3>{project.title}</h3>
-        {/* <section>{project.description } </section> */}
-        <a href={project.url}>
-          <img src={project.image} alt={`Project ${project.title}`} onError={(e) => 
+        {suppliers.map(( supplier )=> (
+        <div key = {supplier.title}> 
+        <h3>{supplier.title}</h3>
+        {/* <section>{supplier.description } </section> */}
+        <a href={supplier.url}>
+          <img className="supplier-img" src={supplier.image} alt={`supplier ${supplier.title}`} onError={(e) => 
             console.log('Error loading image:', e.target.src)} />
         </a>
         </div>
