@@ -1,3 +1,4 @@
+// Admin model
 const { Schema, Types} = require('mongoose');
 const bidSchema = require('./Bid');
 

@@ -1,3 +1,4 @@
+// Cart model
 const { Schema } = require('mongoose');
 
 

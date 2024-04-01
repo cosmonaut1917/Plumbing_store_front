@@ -1,3 +1,4 @@
+// Cart model
 const { Schema, Types } = require('mongoose');
 const cartSchema = require('./Cart');
 

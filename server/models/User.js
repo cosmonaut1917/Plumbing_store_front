@@ -1,3 +1,4 @@
+// User.js is a model that defines the User schema and model. This model is exported from the models directory.
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const clientSchema = require('./Client');

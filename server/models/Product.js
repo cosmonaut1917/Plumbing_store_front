@@ -1,3 +1,4 @@
+// Product model
 const { Schema, model } = require('mongoose');
 
 

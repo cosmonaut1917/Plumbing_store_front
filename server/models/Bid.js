@@ -1,3 +1,4 @@
+// Bid model
 const { Schema, Types } = require('mongoose');
 
 
