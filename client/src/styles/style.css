@@ -1,0 +1,14 @@
+.parent-img {
+    display: flex; /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Vertically centers items */
+    gap: 20px; /* Adds space between items */
+  }
+
+.supplier-img {
+    display: flex;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+}
