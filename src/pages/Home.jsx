@@ -1,4 +1,6 @@
-export default function Home() {
+import Locations from '../components/Locations';
+
+function Home() {
   return (
     <div>
       <h1>Home Page</h1>
@@ -14,6 +16,15 @@ export default function Home() {
         vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
         fames ac ante ipsum primis in faucibus.
       </p>
+      <h2>Locations
+
+        <Locations/> 
+        
+      </h2>
     </div>
   );
 }
+
+
+
+export default Home;

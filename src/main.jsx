@@ -12,7 +12,8 @@ import About from './pages/About';
 import Company from './pages/Company';
 import Suppliers from './pages/Suppliers'
 import supplierData from '../src/suppliers'
-
+import locationsData from '../src/locations.js'
+// import Card from 'react-bootstrap/Card';
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Home locations ={locationsData}/>,
       },
       {
         path: '/Company',
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: '/Suppliers',
         element: <Suppliers suppliers={supplierData}/>,
       },
+      {
+        path: '/About',
+        element: <About />,
+      }
     ],
   },
 ]);
