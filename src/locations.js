@@ -3,45 +3,45 @@
 const locations = [
     {
         name: "Richfield",
-        address: "",
+        address: "90 North 600 East",
         image: "../src/assets/images/richfield.jpg",
-        size: "18rem",
-        phone: "435-896-8231"
+        phone: "435-896-8231",
+        hours: "Monday-Friday 7:00am-5:30pm"
     },
     {
         name: "Logan",
-        address: "",
+        address: "1060 West Center Street",
         image: "../src/assets/images/logan.jpg",
-        size: "18rem",
-        phone: "435-752-9580"
+        phone: "435-752-9580",
+        hours: "Monday-Friday 7:00am-5:30pm"
     },
     {
         name: "Ogden",
-        address: "",
-        image:"../src/assets/images/ogden.jpg",
-        size: "18rem",
-        phone: " 385-333-0400"
+        address: "615 west 12th street",
+        image:"../src/assets/images/ogden.png",
+        phone: " 385-333-0400",
+        hours: "Monday-Friday 7:00am-5:00pm"
     },
     {
         name: "SaltLake",
-        address: "",
-        image:"../src/assets/images/saltlake.jpg",
-        size: "18rem",
-        phone: "801-973-8700"
+        address: "2069 South 700 West",
+        image:"../src/assets/images/salt-lake-city.jpg",
+        phone: "801-973-8700",
+        hours: "Monday-Friday 7:00am-5:00pm"
     },
     {
         name:"Orem",
-        address: "",
+        address: "1036 North 1430 West",
         image:"../src/assets/images/orem.jpg",
-        size: "18rem",
-        phone: " 801-434-9700"
+        phone: " 801-434-9700",
+        hours: "Monday-Friday 7:00am-5:00pm"
     },
     {
         name: "Ceder",
-        address: "",
-        image: "../src/assets/images/ceder.jpg",
-        size: "18rem",
-        phone: "435-586-4440"
+        address: "410 South Main Street",
+        image: "../src/assets/images/ceder-city.jpg",
+        phone: "435-586-4440",
+        hours: "Monday-Friday 7:00am-5:30pm"
     },
     
 ]

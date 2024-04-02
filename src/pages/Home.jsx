@@ -18,9 +18,8 @@ function Home() {
       </p>
       <h2>Locations
 
-        <Locations/> <Locations/> 
-         <Locations/> <Locations/>
-         <Locations/> <Locations/>
+        <Locations/> 
+        
       </h2>
     </div>
   );
