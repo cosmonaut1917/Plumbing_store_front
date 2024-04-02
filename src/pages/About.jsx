@@ -5,7 +5,7 @@ export default function About() {
     <div>
     <h1>Our Company</h1>
     <div className = "about">
-      <img className ="profile" src ={img} alt="Theron Mitchell Profile picture" />
+      {/* <img className ="profile" src ={img} alt="Theron Mitchell Profile picture" /> */}
       <p>
         Our Company
        </p>
@@ -13,3 +13,4 @@ export default function About() {
     </div>
   );
 }
+
