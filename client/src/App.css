@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.header{
+  background-image: url('./assets/images/background_faucet.png');
+  height: 200px;
+}

@@ -4,7 +4,7 @@ import "../styles/style.css";
 const styles = {
   card: {
     margin: 20,
-    background: '#e8eaf6',
+    background: '#012D76',
   },
   heading: {
     background: '#3f51b5',
@@ -22,7 +22,7 @@ const styles = {
 function Suppliers({ suppliers }) {
   console.log(suppliers)
   return (
-    <section style={styles.card}>
+    <section className="suppliers">
       {/* <h2 style={styles.heading}>Work</h2> */}
       <hr className="solid" />
       <div className="parent-img">
