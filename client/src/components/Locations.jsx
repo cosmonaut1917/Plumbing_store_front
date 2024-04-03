@@ -37,8 +37,8 @@ function Locations() {
     return (
         <>
             {locations.map(location => (
-                <div key={location.id} style={styles.container}>
-                    <Card key={location.id} style={styles.card}>
+                <div key={location.phone} style={styles.container}>
+                    <Card key={location.phone} style={styles.card}>
                         <Card.Img variant="top" src={location.image} style={styles.image} />
                         <Card.Body style={styles.card}>
                             <Card.Title>{location.name}</Card.Title>
