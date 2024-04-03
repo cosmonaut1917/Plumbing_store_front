@@ -12,7 +12,7 @@ import Company from './pages/Company';
 import Suppliers from './pages/Suppliers';
 import supplierData from '../src/suppliers';
 import Signup from './pages/Signup';
-
+import locationsData from '../src/locations.js';
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
