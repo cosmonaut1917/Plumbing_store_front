@@ -1,6 +1,14 @@
 import Locations from '../components/Locations';
+import Map from '../components/Map';
+import { useLoadScript } from '@react-google-maps/api';
 
 function Home() {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAFQ__YFyi286ggu2vv9AXZn9S5oh370Tw"
+  });
+  if (loadError) return <div>Error loading map</div>;
+  if (!isLoaded) return <div>Loading...</div>;
+  
   return (
     <div>
       <h1>Home Page</h1>
@@ -16,6 +24,7 @@ function Home() {
         vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
         fames ac ante ipsum primis in faucibus.
       </p>
+      <Map /> !! MAP !!
       <h2>Locations
 
         <Locations/> 
@@ -24,7 +33,5 @@ function Home() {
     </div>
   );
 }
-
-
 
 export default Home;
