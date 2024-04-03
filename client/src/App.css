@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.header-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header{
+  background-image: url('./assets/images/background_faucet.png');
+  height: 100px;
+}

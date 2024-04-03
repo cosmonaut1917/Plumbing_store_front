@@ -1,6 +1,5 @@
 import React from 'react'; // Import React
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Card, Button} from 'react-bootstrap';
 import locations from '../locations.js';
 function Locations(props) {
    
