@@ -12,6 +12,7 @@ import Company from './pages/Company';
 import Suppliers from './pages/Suppliers';
 import supplierData from '../src/suppliers';
 import Signup from './pages/Signup';
+
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Home locations ={locationsData}/>,
       },
       {
         path: '/Company',
