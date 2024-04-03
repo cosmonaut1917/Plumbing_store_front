@@ -41,6 +41,11 @@ function NavTabs() {
           Suppliers
         </Link>
       </li>
+      <li className="nav-item">
+        <Link to ="/Store" className={currentPage === '/Store' ? 'nav-link active' : 'nav-link'}>
+          Store
+          </Link>
+          </li>
     </ul>
   );
 }
