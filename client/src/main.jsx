@@ -9,9 +9,9 @@ import Error from './pages/Error';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Company from './pages/Company';
-import Suppliers from './pages/Suppliers'
-import supplierData from '../src/suppliers'
-import locationsData from '../src/locations.js'
+import Suppliers from './pages/Suppliers';
+import supplierData from '../src/suppliers';
+import Signup from './pages/Signup';
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/Login',
         element: <Login />,
+      },
+      {
+        path: '/Signup',
+        element: <Signup />,
       },
       {
         path: '/Suppliers',
