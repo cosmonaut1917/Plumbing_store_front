@@ -27,7 +27,7 @@ function Suppliers({ suppliers }) {
       <hr className="solid" />
       <div className="parent-img">
         {suppliers.map(( supplier )=> (
-        <div className="parent-img" key = {supplier.title}> 
+        <div className="parent-img" key = {supplier.alt}> 
         {/* <h3>{supplier.title}</h3> */}
         <a href={supplier.url}>
           <img className="supplier-img" src={supplier.image} alt={`supplier ${supplier.title}`} onError={(e) => 
