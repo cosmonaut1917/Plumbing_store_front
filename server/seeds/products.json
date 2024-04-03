@@ -1,0 +1,44 @@
+[
+    {
+        "productname": "Pipe Fittings",
+        "description": "Assorted pipe fittings for plumbing needs",
+        "price": 12.99,
+        "stock": 100
+    },
+    {
+        "productname": "PVC Pipes",
+        "description": "Various sizes of PVC pipes for plumbing projects",
+        "price": 24.99,
+        "stock": 50
+    },
+    {
+        "productname": "Toilet",
+        "description": "Variety of colors and sizes",
+        "price": 24.99,
+        "stock": 10
+    },
+    {
+        "productname": "P Traps",
+        "description": "Assorted P Traps",
+        "price": 24.99,
+        "stock": 65
+    },
+    {
+        "productname": "Plumbing Wrench",
+        "description": "Wrenchs for all needs",
+        "price": 24.99,
+        "stock": 50
+    },
+    {
+        "productname": "Water Heater",
+        "description": "Replacement water heaters",
+        "price": 600,
+        "stock": 20
+    },
+    {
+        "productname": "Water softner",
+        "description": "Proffessional grade water softner",
+        "price": 500,
+        "stock": 15
+    }
+]
