@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import '../styles/style.css'
+
 
 function NavTabs() {
   const currentPage = useLocation().pathname;
@@ -6,11 +8,11 @@ function NavTabs() {
   return (
     
     
-    <ul className="nav nav-tabs justify-content-end bg-secondary.bg-gradient">
+    <ul className="nav justify-content-end">
       <li className="nav-item">
         <Link
           to="/"
-          className={currentPage === '/' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === '/' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
           Home
         </Link>
@@ -18,7 +20,7 @@ function NavTabs() {
       <li className="nav-item">
         <Link
           to="/Company"
-          className={currentPage === '/Company' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === '/Company' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
           Our Company
         </Link>
@@ -26,7 +28,7 @@ function NavTabs() {
       <li className="nav-item">
         <Link
           to="/Login"
-          className={currentPage === '/Login' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
           Login
         </Link>
@@ -34,7 +36,7 @@ function NavTabs() {
       <li className="nav-item">
         <Link
           to="/Suppliers"
-          className={currentPage === '/Suppliers' ? 'nav-link active' : 'nav-link'}
+          className={currentPage === '/Suppliers' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
           Suppliers
         </Link>

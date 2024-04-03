@@ -1,5 +1,7 @@
 
+
 import Card from 'react-bootstrap/Card';
+
 import locations from '../locations.js';
 function Locations() {
     const styles = {

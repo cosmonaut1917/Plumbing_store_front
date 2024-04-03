@@ -10,8 +10,9 @@ function App() {
   return (
     <>
     <header className=''> 
+   
     <Title className = 'title' />
-    <Nav  />
+    
     </header>
       
       <main className ="mx-3">

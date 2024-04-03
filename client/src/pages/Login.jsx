@@ -4,11 +4,6 @@ import Signup from './Signup';
 import {Link} from "react-router-dom"
 
 export default function Login() {
-// Define state for each input field
-// const [name, setName] = useState('');
-// const [email, setEmail] = useState('');
-// const [message, setMessage] = useState('');
-// const [phone, setPhone] = useState('');
 const [formData, setFormData]=useState({username:"",email:"", password:""})
 const handleInputChange =(event)=>{
   const {name,value}=event.target
@@ -20,9 +15,7 @@ const handleSubmit = (event) =>{
     event.preventDefault();
     console.log(formData)
     console.log("submit button")
-    // setName('');
-    // setEmail('');
-    // setMessage('');
+    setFormData({ username: "", email: "", password: ""});
   }
  
 
@@ -53,17 +46,7 @@ return (
           required
         />
       </div>
-      {/* <div>
-        <label htmlFor="phone">Phone:</label>
-        <input 
-          type="phone" 
-          id="phone" 
-          name="phone" 
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-      </div> */}
+ 
 
 
 
@@ -77,4 +60,4 @@ return (
   </div>
 );
 }
-//test
+

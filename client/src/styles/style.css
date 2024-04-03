@@ -1,3 +1,71 @@
+:root {
+  --primary-color: #71A1CF; 
+  --primary-color-light: ##F8FDFF; 
+  --primary-color-dark: #011a57; 
+  --primary-color-tint: #013d96; 
+  --primary-color-shade: #011f5b; 
+  --text-color-dark: #012D76;
+  --text-color-light: #fdfdfd;
+  --complementary-color: #676b88;
+  --round-large: 10px;
+  --round-small: 0.25rem;
+}
+
+
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: var(--primary-color-light);
+  color: var(--text-color-dark);
+}
+
+a:hover {
+  color: var(--primary-color-light);
+}
+
+button {
+  background-color: var(--complementary-color);
+  color: var(--text-color-light);
+  border-radius: var(--round-small);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  height: 50px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0px 2px;
+}
+
+header img{
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 20px;
+} 
+
+#login-form{
+  padding: 10px 0px
+}
+
+#login-form input{
+  margin: 5px;
+  border-radius: var(--round-small);
+}
+
+
+
+.suppliers{
+  background-color: #012D76;
+  background-color: #E9F7FF;
+  padding: 0px 10px
+}
+
 .parent-img {
     display: flex; /* Enables flexbox layout */
     flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
@@ -11,4 +79,20 @@
     height: 50px;
     width: 100px;
     border-radius: 5px;
+    box-shadow: 0px 4px 8px 0px var(--primary-color-shade);
 }
+
+.nav-bar {
+  background-color: var(--primary-color-light);
+  color: var(--text-color-dark);
+  padding: 0.5rem 1rem; 
+  border-radius: 0.25rem;
+  text-decoration: none !important;
+  border-radius: var(--round-small);
+}
+
+.nav-bar-active{
+  background-color: var(--complementary-color);
+  color: var(--text-color-light);
+}
+
