@@ -1,27 +1,33 @@
 
 import Card from 'react-bootstrap/Card';
 import locations from '../locations.js';
-function Locations(props) {
+function Locations() {
     const styles = {
-        card: {
-            width: '20rem',
+        container: {
+            inline: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '10px 20px',
             margin: '1rem',
-            height: '18rem',
+        },
+        card: {
             // display: 'flex',
-            // display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)" , 
-            // gridGap: 20,
+            width: '100%',
+            // margin: '1rem',
+            // height: '18rem',
         },
         image: {
-            height: '10rem',
             objectFit: 'fill',
             objectPosition: 'center',
             display: 'fixed',
         },
         text: {
+            // display: 'flex',
+            flexWrap: 'wrap',
             fontSize: '1rem',
             textAlign: 'left',
-            display: 'flex',
         }
     }
 
@@ -29,19 +35,21 @@ function Locations(props) {
     return (
         <>
             {locations.map(location => (
-                <Card key={location.id} style={styles.card}>
-                    <Card.Img variant="top" src={location.image} style={styles.image} />
-                    <Card.Body style={styles.card}>
-                        <Card.Title>{location.name}</Card.Title>
-                        <Card.Text style={styles.text}>
-                            Phone: {location.phone}
-                            <br />
-                            Address: {location.address}
-                            <br />
-                            Hours: {location.hours}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                <div key={location.id} style={styles.container}>
+                    <Card key={location.id} style={styles.card}>
+                        <Card.Img variant="top" src={location.image} style={styles.image} />
+                        <Card.Body style={styles.card}>
+                            <Card.Title>{location.name}</Card.Title>
+                            <Card.Text style={styles.text}>
+                                Phone: {location.phone}
+                                <br />
+                                Address: {location.address}
+                                <br />
+                                Hours: {location.hours}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                </div>
             ))}
         </>
     );

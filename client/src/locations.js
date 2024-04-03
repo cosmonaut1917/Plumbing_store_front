@@ -23,7 +23,7 @@ const locations = [
         hours: "Monday-Friday 7:00am-5:00pm"
     },
     {
-        name: "SaltLake",
+        name: "Salt Lake City",
         address: "2069 South 700 West",
         image:"../src/assets/images/salt-lake-city.jpg",
         phone: "801-973-8700",
@@ -37,7 +37,7 @@ const locations = [
         hours: "Monday-Friday 7:00am-5:00pm"
     },
     {
-        name: "Ceder",
+        name: "Ceder City",
         address: "410 South Main Street",
         image: "../src/assets/images/ceder-city.jpg",
         phone: "435-586-4440",
