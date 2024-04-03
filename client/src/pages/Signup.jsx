@@ -34,8 +34,7 @@ return (
           type="text" 
           id="username" 
           name="username" 
-          value={formData.username} // Set the input's value to state
-          // onChange={(e) => setName(e.target.value)} // Update state on change
+          value={formData.username} 
           onChange={handleChange}
           required
         />
@@ -48,7 +47,6 @@ return (
           id="email" 
           name="email" 
           value={formData.email}
-          // onChange={(e) => setEmail(e.target.value)}
           onChange={handleChange}
           required
         />
@@ -85,5 +83,5 @@ return (
   </div>
 );
 }
-//test
+
 export default Signup
