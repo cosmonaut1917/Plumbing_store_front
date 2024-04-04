@@ -47,7 +47,7 @@ const productsData = [
     stock: 20
   },
   {
-    name: 'Water softner's',
+    name: "Water softner's",
     description: 'Proffessional grade water softners',
     price: 500.00,
     stock: 15

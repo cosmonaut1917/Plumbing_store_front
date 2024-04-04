@@ -4,9 +4,6 @@ const typeDefs = `
     username: String!
     email: String!
     password: String
-    admin: Admin
-    client: Client
-  
   }
 type Admin {
     adminId: ID
@@ -73,3 +70,5 @@ input ProductInput {
 `;
 
 module.exports = typeDefs;
+
+

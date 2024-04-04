@@ -53,13 +53,8 @@ const resolvers = {
         addProduct: async (parent, { productname, description, price, stock, image }) => {
             return Product.create({ productname, description, price, stock, image });
         },
-       
-
-
-
-
-
     },
 };
 
 module.exports = resolvers;
+
