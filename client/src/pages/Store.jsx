@@ -1,5 +1,5 @@
-// import style from '../styles/style.css';
-// import React from 'react';
+import '../styles/style.css';
+import React from 'react';
 import App from "../App";
 
 const styles = {

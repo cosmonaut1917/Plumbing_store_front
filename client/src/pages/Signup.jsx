@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import '../App.css'
 
 function Signup() {
     const [formData, setFormData] = useState({ username: "", email: "", password: "", phone: "" });
@@ -41,10 +42,12 @@ function Signup() {
     return (
         <div>
             <h1>Signup</h1>
-            <form id="signup-form" onSubmit={handleSubmit}>
+            <form className="login-form" onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">Name:</label>
+                    {/* <label  htmlFor="username">First Name:</label> */}
                     <input
+                        className="input-field"
+                        placeholder='Create a User Name'
                         type="text"
                         id="username"
                         name="username"
@@ -53,10 +56,13 @@ function Signup() {
                         required
                     />
                 </div>
+   
 
                 <div>
-                    <label htmlFor="email">Email:</label>
+                    {/* <label className="label" htmlFor="email">Email:</label> */}
                     <input
+                    className="input-field"
+                        placeholder='Enter Your Email'
                         type="email"
                         id="email"
                         name="email"
@@ -66,8 +72,10 @@ function Signup() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="phone">Phone:</label>
+                    {/* <label className="label" htmlFor="phone">Phone:</label> */}
                     <input
+                    className="input-field"
+                        placeholder='Phnone Number'
                         type="phone"
                         id="phone"
                         name="phone"
@@ -77,8 +85,23 @@ function Signup() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="password">Password:</label>
+                    {/* <label className="label" htmlFor="password">Password:</label> */}
                     <input
+                    className="input-field"
+                        placeholder='Create a Password'
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    {/* <label className="label" htmlFor="password">Password:</label> */}
+                    <input
+                    className="input-field"
+                        placeholder='Confirm your Password'
                         type="password"
                         id="password"
                         name="password"

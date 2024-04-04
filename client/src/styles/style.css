@@ -49,11 +49,11 @@ header img{
   padding: 20px;
 } 
 
-#login-form{
+.login-form{
   padding: 10px 0px
 }
 
-#login-form input{
+.login-form input{
   margin: 5px;
   border-radius: var(--round-small);
 }
