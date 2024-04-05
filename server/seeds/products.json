@@ -1,0 +1,164 @@
+[
+    {
+        "productname": "Pipe Fittings",
+        "description": "Assorted pipe fittings for plumbing needs",
+        "price": 12.99,
+        "stock": 100
+    },
+    {
+        "productname": "PVC Pipes",
+        "description": "Various sizes of PVC pipes for plumbing projects",
+        "price": 24.99,
+        "stock": 50
+    },
+    {
+        "productname": "Toilet",
+        "description": "Variety of colors and sizes",
+        "price": 24.99,
+        "stock": 10
+    },
+    {
+        "productname": "P Traps",
+        "description": "Assorted P Traps",
+        "price": 24.99,
+        "stock": 65
+    },
+    {
+        "productname": "Plumbing Wrench",
+        "description": "Wrenchs for all needs",
+        "price": 24.99,
+        "stock": 50
+    },
+    {
+        "productname": "Water Heater",
+        "description": "Replacement water heaters",
+        "price": 600,
+        "stock": 20
+    },
+    {
+        "productname": "Water softner",
+        "description": "Proffessional grade water softner",
+        "price": 500,
+        "stock": 15
+    },
+    {
+        "productname": "Sink Drain Strainer",
+        "description": "Stainless steel sink drain strainer, prevents clogging",
+        "price": 8.99,
+        "stock": 50
+    },
+    {
+        "productname": "Shower Head Filter",
+        "description": "High-quality shower head filter, removes impurities for clean water",
+        "price": 25.99,
+        "stock": 30
+    },
+    {
+        "productname": "Toilet Flapper",
+        "description": "Universal fit toilet flapper for efficient flushing",
+        "price": 12.49,
+        "stock": 40
+    },
+    {
+        "productname": "Pipe Wrench Set",
+        "description": "Adjustable pipe wrench set for versatile plumbing tasks",
+        "price": 45.99,
+        "stock": 20
+    },
+    {
+        "productname": "Faucet Aerator",
+        "description": "Water-saving faucet aerator, reduces water usage without sacrificing pressure",
+        "price": 6.99,
+        "stock": 60
+    },
+    {
+        "productname": "Plumbing Tape",
+        "description": "Durable Teflon plumbing tape, seals pipe threads effectively",
+        "price": 3.49,
+        "stock": 100
+    },
+    {
+        "productname": "Pipe Cutter",
+        "description": "Ratcheting pipe cutter, precise cuts for various pipe materials",
+        "price": 18.99,
+        "stock": 25
+    },
+    {
+        "productname": "Hose Bibb",
+        "description": "Brass hose bibb with quarter-turn operation, for outdoor water connections",
+        "price": 14.99,
+        "stock": 35
+    },
+    {
+        "productname": "Plumbing Snake",
+        "description": "Flexible plumbing snake, clears tough clogs in drains",
+        "price": 22.99,
+        "stock": 20
+    },
+    {
+        "productname": "Pipe Insulation",
+        "description": "Foam pipe insulation, prevents freezing and reduces heat loss",
+        "price": 9.99,
+        "stock": 50
+    },
+    {
+        "productname": "Water Pressure Regulator",
+        "description": "Adjustable water pressure regulator, protects plumbing fixtures from high pressure",
+        "price": 32.99,
+        "stock": 15
+    },
+    {
+        "productname": "Plumber's Putty",
+        "description": "Malleable plumber's putty, seals and caulks fixtures and pipes",
+        "price": 5.99,
+        "stock": 40
+    },
+    {
+        "productname": "Frost-Free Sillcock",
+        "description": "Frost-free outdoor sillcock, prevents freezing in cold weather",
+        "price": 28.99,
+        "stock": 10
+    },
+    {
+        "productname": "Compression Fittings Kit",
+        "description": "Assorted compression fittings kit, for quick and easy pipe connections",
+        "price": 19.99,
+        "stock": 25
+    },
+    {
+        "productname": "Water Shut-Off Valve",
+        "description": "Brass water shut-off valve, for emergency plumbing repairs",
+        "price": 11.99,
+        "stock": 30
+    },
+    {
+        "productname": "Garbage Disposal",
+        "description": "Powerful garbage disposal unit, grinds food waste efficiently",
+        "price": 149.99,
+        "stock": 8
+    },
+    {
+        "productname": "PVC Pipe Cement",
+        "description": "Heavy-duty PVC pipe cement, creates strong, permanent bonds",
+        "price": 7.49,
+        "stock": 40
+    },
+    {
+        "productname": "Septic Tank Treatment",
+        "description": "Effective septic tank treatment, breaks down waste and prevents odors",
+        "price": 24.99,
+        "stock": 20
+    },
+    {
+        "productname": "Water Heater Element",
+        "description": "Replacement water heater element, ensures hot water supply",
+        "price": 16.99,
+        "stock": 15
+    },
+    {
+        "productname": "Plumbing Access Panel",
+        "description": "Convenient plumbing access panel, allows easy access to pipes and valves",
+        "price": 29.99,
+        "stock": 12
+    }
+]

@@ -24,17 +24,12 @@ const userSchema = new Schema(
             minlength: 8,
 
         },
-        phone: {
-            type: String,
-            required: true,
-            match: [/^\d{3}-\d{3}-\d{4}$/, 'Must use a valid phone number format (XXX-XXX-XXXX)'],
-        },    
-        client: {
-            clientSchema
-        },
-        admin: {
-            adminSchema
-        }
+        // client: {
+        //     clientSchema
+        // },
+        // admin: {
+        //     adminSchema
+        // }
     },
 
 
