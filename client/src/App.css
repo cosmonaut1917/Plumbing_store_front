@@ -50,3 +50,34 @@
   background-image: url('./assets/images/background_faucet.png');
   height: 100px;
 }
+
+.input-field{
+  border: 1px solid rgb(151, 150, 150); /* Light grey border by default */
+  outline: none; /* Removes the default focus outline */
+  padding: 4px 8px; /* Adds some padding inside the input fields */
+  margin: 10px 0; /* Adds some margin around each input field for spacing */
+}
+
+.input-field:focus{
+  border: 1.5px solid rgb(58, 57, 57); /* Light grey border by default */
+  outline: none; /* Removes the default focus outline */
+  padding: 4px 8px; /* Adds some padding inside the input fields */
+  margin: 10px 0; /* Adds some margin around each input field for spacing */
+}
+
+.submit-create{
+  display: flex;
+  /* border: 1px black solid; */
+  justify-content: center;
+  align-content: center;
+}
+
+.submit-create button{
+  margin:  0 10px 0 0;
+  height: 30px;
+  padding: 0 15px 0 15px;
+}
+.signup{
+  margin: 2rem 0 0 0;
+}
+

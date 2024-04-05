@@ -1,5 +1,6 @@
 const { User, Product } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
+const bcrypt = require('bcrypt');
 
 const resolvers = {
     Query: {
@@ -53,13 +54,31 @@ const resolvers = {
         addProduct: async (parent, { productname, description, price, stock, image }) => {
             return Product.create({ productname, description, price, stock, image });
         },
-       
+        deleteUser: async (parent, {_id}) =>{
+            return User.findByIdAndDelete({_id})
+        },
+        updateUser: async (parent, {_id, username, email, password}) => {
+            const update = {};
+            if (username) update.username = username;
+            if (email) update.email = email;
+            if (password) {
+                // Hash the new password before saving it
+                const salt = await bcrypt.genSalt(10);
+                update.password = await bcrypt.hash(password, salt);
+            }
 
+            // Update the user in the database
+            const updatedUser = await User.findByIdAndUpdate(
+                _id, 
+                { $set: update }, 
+                { new: true } // Return the updated document
+            );
 
-
-
-
+            return updatedUser;
+        },
+   
     },
 };
 
 module.exports = resolvers;
+
