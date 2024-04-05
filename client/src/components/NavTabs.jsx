@@ -41,15 +41,18 @@ function NavTabs() {
           Suppliers
         </Link>
       </li>
+
       <li className="nav-item">
-        <Link to ="/Store" className={currentPage === '/Store' ? 'nav-link active' : 'nav-link'}>
+        <Link
+          to="/Store"
+          className={currentPage === '/Store' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+        >
           Store
-          </Link>
-          </li>
+        </Link>
+      </li>
+
     </ul>
   );
 }
 
 export default NavTabs;
-
-//Test

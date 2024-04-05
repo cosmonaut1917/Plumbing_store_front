@@ -24,12 +24,12 @@ const userSchema = new Schema(
             minlength: 8,
 
         },
-        client: {
-            clientSchema
-        },
-        admin: {
-            adminSchema
-        }
+        // client: {
+        //     clientSchema
+        // },
+        // admin: {
+        //     adminSchema
+        // }
     },
 
 
