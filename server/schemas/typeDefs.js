@@ -39,14 +39,14 @@ type Product {
     _id: ID
     productname: String!
     description: String!
-    price: Int!
+    price: Float!
     stock: Int!
     image: String
   }
 input ProductInput {
     productname: String!
     description: String!
-    price: Int!
+    price: Float!
     stock: Int!
     image: String
 }
@@ -67,7 +67,7 @@ input ProductInput {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
+    addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
 
   }
 `;
