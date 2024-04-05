@@ -1,7 +1,8 @@
 import '../styles/style.css';
 import React from 'react';
 import App from "../App";
-
+import Inventory from "../components/Inventory.jsx";
+import InventoryImage from "../components/ExampleCarouselImage.jsx";
 const styles = {
     card: {
         margin: 20,
@@ -23,8 +24,9 @@ const styles = {
 
 function Store() {
     return (
-        <div>
-            <h1>Store</h1>
+        <div style={styles.card}>
+            <h1 style={styles.heading}><Inventory />
+            <InventoryImage /></h1>
             <p>Our store is located at 1234 Elm St.</p>
             <p>Our store hours are 9am-5pm.</p>
         </div>

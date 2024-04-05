@@ -1,13 +1,20 @@
-const { ApolloClient, InMemoryCache, gql } = require('@apollo/client');
-const fetch = require('cross-fetch');
+const db= require("../config/connection")
+const {User,Product}=require("../models")
+const cleanDB= require("./cleanDB")
+const productData=require("./products.json")
 
-// Initialize Apollo Client
-const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql', // Your GraphQL server endpoint
-  cache: new InMemoryCache(),
-  fetch: fetch,
+
+
+db.once('open', async () => {
+  await cleanDB('Product', 'plumbingstore');
+
+  await Product.insertMany(productData);
+
+  console.log('Products seeded!');
+  process.exit(0);
 });
 
+<<<<<<< HEAD
 // Sample data
 const productsData = [
   {
@@ -94,3 +101,5 @@ async function seedProducts() {
 
 // Call the seedProducts function
 seedProducts();
+=======
+>>>>>>> 25d6f4ea98530009c67350da28741a3b29dcde39
