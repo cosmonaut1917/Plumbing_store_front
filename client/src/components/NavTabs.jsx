@@ -38,7 +38,8 @@ function NavTabs() {
           Suppliers
         </Link>
       </li>
-
+      
+      {loggedIn && (
       <li className="nav-item">
         <Link
           to="/Store"
@@ -47,6 +48,7 @@ function NavTabs() {
           Store
         </Link>
       </li>
+      )}
 
       <li className="nav-item">
         <Link
