@@ -7,7 +7,7 @@ import { useAuth } from '../utils/authContext'
 
 
 function NavTabs() {
-  const loggedIn = useAuth()
+  const { loggedIn } = useAuth()
   const currentPage = useLocation().pathname;
 
 
