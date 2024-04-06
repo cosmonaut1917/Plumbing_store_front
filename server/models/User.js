@@ -24,9 +24,10 @@ const userSchema = new Schema(
             minlength: 8,
 
         },
-        // client: {
-        //     clientSchema
-        // },
+        client: {
+            type: Schema.Types.ObjectId,
+            ref: 'Client'
+        },
         // admin: {
         //     adminSchema
         // }

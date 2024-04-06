@@ -14,6 +14,7 @@ import supplierData from '../src/suppliers';
 import Signup from './pages/Signup';
 import Store from './pages/Store';
 import locationsData from '../src/locations.js';
+import Admin from './pages/Admin.jsx';
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/Store',
         element: <Store />,
+      },
+      {
+        path: '/Admin',
+        element: <Admin/>,
       }
     ],
   },

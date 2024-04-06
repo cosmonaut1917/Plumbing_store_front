@@ -33,6 +33,16 @@ query products {
   }
 }
 `;
+export const QUERY_CLIENTS = gql`
+query clients {
+  clients{
+    _id
+    firstname
+    lastname
+    contact
+  }
+}
+`;
 
 
 

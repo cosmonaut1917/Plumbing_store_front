@@ -4,6 +4,7 @@ const typeDefs = `
     username: String!
     email: String!
     password: String
+    client: Client
   }
 type Admin {
     adminId: ID
@@ -14,10 +15,10 @@ type Admin {
 
 }
 type Client {
-    clientId: ID
+    _id: ID
     firstname: String!
     lastname: String!
-    contact: String!
+    contact: String
     cart: [Cart]
 }
 type Bid {
@@ -59,6 +60,7 @@ input ProductInput {
     me: User
     products: [Product]
     product(_id: ID!): Product
+    clients: [Client]
   }
 
   type Mutation {
@@ -67,8 +69,8 @@ input ProductInput {
     updateUser(_id: ID!, username: String, email: String): User
     deleteUser(_id: ID!): User
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
-
-
+addToCart(product: ProductInput!): Client
+addProfile(firstname: String!, lastname: String!, contact: String): User
   }
 `;
 

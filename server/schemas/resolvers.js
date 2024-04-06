@@ -1,4 +1,4 @@
-const { User, Product } = require('../models');
+const { User, Product, Client } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const bcrypt = require('bcrypt');
 
@@ -24,7 +24,11 @@ const resolvers = {
         product: async (parent, { _id }) => {
             return Product.findOne({ _id })
 
+        },
+        clients: async () => {
+            return Client.find()
         }
+        
 
     },
 
@@ -77,6 +81,12 @@ const resolvers = {
             return updatedUser;
         },
    
+        addProfile: async (parent, { firstname, lastname, contact }, context ) => {
+            const newClient = await Client.create({ firstname, lastname, contact });
+            const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $set: {firstname: newClient.firstname, lastname:newClient.lastname, contact: newClient.contact} }, { new: true});
+            return updatedUser;
+
+        },
     },
 };
 
