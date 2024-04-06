@@ -14,7 +14,6 @@ db.once('open', async () => {
   process.exit(0);
 });
 
-<<<<<<< HEAD
 // Sample data
 const productsData = [
   {
@@ -101,5 +100,3 @@ async function seedProducts() {
 
 // Call the seedProducts function
 seedProducts();
-=======
->>>>>>> 25d6f4ea98530009c67350da28741a3b29dcde39

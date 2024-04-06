@@ -4,6 +4,7 @@ const typeDefs = `
     username: String!
     email: String!
     password: String
+    phone: String!
   }
 type Admin {
     adminId: ID
@@ -62,10 +63,10 @@ input ProductInput {
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, phone: String!): Auth
     login(email: String!, password: String!): Auth
     addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
-    updateUser(_id: ID!, username: String, email: String): User
+    updateUser(_id: ID!, username: String, email: String, phone: String): User
     deleteUser(_id: ID!): User
   }
 `;
