@@ -51,6 +51,16 @@ function NavTabs() {
         </Link>
       </li>
 
+
+      <li className="nav-item">
+        <Link
+          to="/Users"
+          className={currentPage === '/Users' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+        >
+          Users
+        </Link>
+      </li>
+
     </ul>
   );
 }

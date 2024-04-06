@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Card from 'react-bootstrap/Card';
@@ -67,6 +68,7 @@ function Locations() {
         }
     };
 
+
     return (
         <>
             {locations.map(location => (
@@ -81,9 +83,11 @@ function Locations() {
                                 Address: {location.address}
                                 <br />
                                 Hours: {location.hours}
+
                                 <br />
                             </Card.Text>
                             <MyComponent location={location} /> {/* Pass location as a prop */}
+
                         </Card.Body>
                     </Card>
                 </div>
