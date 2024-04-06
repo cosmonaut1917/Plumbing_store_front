@@ -69,7 +69,6 @@ input ProductInput {
     addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
     updateUser(_id: ID!, username: String, email: String, phone: String): User
     deleteUser(_id: ID!): User
-    addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
 
 
   }
