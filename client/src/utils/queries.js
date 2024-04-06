@@ -21,7 +21,18 @@ export const QUERY_SINGLE_USER = gql`
     }
   }
 `;
-
+export const QUERY_PRODUCTS = gql`
+query products {
+  products{
+    _id
+    productname
+    description
+    price
+    stock
+    image
+  }
+}
+`;
 
 
 
