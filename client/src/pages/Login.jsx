@@ -2,6 +2,7 @@ import '../App.css'
 import {useState} from 'react';
 import Signup from './Signup';
 import {Link} from "react-router-dom"
+import AuthService from '../utils/auth'
 
 export default function Login() {
 const [formData, setFormData]=useState({username:"",email:"", password:""})
@@ -11,13 +12,21 @@ const handleInputChange =(event)=>{
 setFormData({...formData,[name]:value})
 
 }
-const handleSubmit = (event) =>{
+const handleSubmit = async(event) =>{
     event.preventDefault();
+
+    try {
+      const response = await AuthService.login(formData.email); // loginUser is a function that sends credentials to the server
+      console.log(response)
+    } catch (error) {
+      console.error('Login error:', error);
+    }
+
     console.log(formData)
     console.log("submit button")
     setFormData({ username: "", email: "", password: ""});
-  }
- 
+}
+
 
 return (
   <div>
