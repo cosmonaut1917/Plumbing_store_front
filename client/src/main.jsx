@@ -10,9 +10,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Company from './pages/Company';
 import Suppliers from './pages/Suppliers';
-import supplierData from '../src/suppliers';
+import Users from './pages/Users'
 import Signup from './pages/Signup';
 import Store from './pages/Store';
+import supplierData from '../src/suppliers';
 import locationsData from '../src/locations.js';
 import Admin from './pages/Admin.jsx';
 
@@ -46,10 +47,18 @@ const router = createBrowserRouter([
       {
         path: '/Store',
         element: <Store />,
+
       },
       {
         path: '/Admin',
         element: <Admin/>,
+
+
+      },
+      {
+        path: '/Users',
+        element: <Users />,
+
       }
     ],
   },
@@ -58,5 +67,3 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 );
-
-//test

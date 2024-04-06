@@ -18,11 +18,16 @@ const userSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must use a valid email address'],
         },
+        phone: {
+            type: String,
+            // required: false,
+            unique: true,
+            // match: [/.+@.+\..+/, 'Must use a valid email address'],
+        },
         password: {
             type: String,
             required: true,
             minlength: 8,
-
         },
         client: {
             type: Schema.Types.ObjectId,
