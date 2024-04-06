@@ -16,7 +16,7 @@ const handleSubmit = async(event) =>{
     event.preventDefault();
 
     try {
-      const response = await AuthService.login(formData.email); // loginUser is a function that sends credentials to the server
+      const response = await AuthService.login(formData.username); // loginUser is a function that sends credentials to the server
       console.log(response)
     } catch (error) {
       console.error('Login error:', error);
@@ -27,46 +27,57 @@ const handleSubmit = async(event) =>{
     setFormData({ username: "", email: "", password: ""});
 }
 
+const loggedIn = AuthService.loggedIn()
+if (loggedIn){
 
+} 
 return (
   <div>
-    <h1>Login</h1>
+    <h1>{loggedIn ? `Welcome ${AuthService.getToken()}...` : "Login"}</h1>
     <form className="login-form" onSubmit={handleSubmit}>
-    <div>
-        {/* <label className="label" htmlFor="email"></label> */}
-        <input 
-          className="input-field" 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder='Enter Your Email'
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      
-      <div>
-        {/* <label className="label" htmlFor="password"  ></label> */}
-        <input 
-          className="input-field" 
-          type="password" 
-          id="password" 
-          name="password" 
-          placeholder='Enter Your Password'
-          value={formData.password} // Set the input's value to state
-          onChange={handleInputChange} // Update state on change
-          required
-        />
-      </div>
+    
+    {!loggedIn && (
+        <>
+          <div>
+            <input 
+              className="input-field" 
+              type="text" 
+              id="username" 
+              name="username" 
+              placeholder='Enter Your Email'
+              value={formData.username} // Adjusted from formData.user to formData.username
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          
+          <div>
+            <input 
+              className="input-field" 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder='Enter Your Password'
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+        </>
+      )}
 
       <div className='submit-create'>
       
-      <button type="submit">Login</button>
       
+      <button type="submit">{loggedIn ? `Logout` : "Login"}</button>
+      
+      {!loggedIn && (
       <p  type="button">
       <Link className="signup" to ="/Signup">Create account.</Link>
       </p>
+      )}
+
+      
       </div>
 
     </form>
