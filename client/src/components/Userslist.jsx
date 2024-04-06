@@ -17,18 +17,20 @@ const UserList = ({ users, title }) => {
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
                   {user.username} <br />
-                  {/* <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently has {user.skills ? user.skills.length : 0}{' '}
-                    endorsed skill
-                    {user.skills && user..length === 1 ? '' : 's'}
-                  </span> */}
                 </h4>
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {user.email} <br />
+                </h4>
+                <h4 className="card-header bg-dark text-light p-2 m-0">
+                  {user.phone} <br />
+                </h4>
+                
 
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/users/${user._id}`}
                 >
-                  View and endorse their skills.
+                  {/* View and endorse their skills. */}
                 </Link>
               </div>
             </div>

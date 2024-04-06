@@ -27,7 +27,6 @@ function Users() {
           ) : (
             <UsersList
               users={users}
-              title="Here's the current roster of friends..."
             />
           )}
         </div>
