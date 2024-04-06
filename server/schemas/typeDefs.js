@@ -1,10 +1,12 @@
+// ToDo client  in usser
+
 const typeDefs = `
   type User {
     _id: ID
     username: String!
     email: String!
     password: String
-    client: Client
+    
     phone: String!
   }
 type Admin {
@@ -73,12 +75,6 @@ input ProductInput {
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
     addToCart(product: ProductInput!): Client
     addProfile(firstname: String!, lastname: String!, contact: String): User
-
-
-    addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
-    updateUser(_id: ID!, username: String, email: String, phone: String): User
-    deleteUser(_id: ID!): User
-
 
   }
 `;
