@@ -16,7 +16,6 @@ import Store from './pages/Store';
 import supplierData from '../src/suppliers';
 import locationsData from '../src/locations.js';
 
-
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
@@ -47,6 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/Store',
         element: <Store />,
+
       },
       {
         path: '/Users',

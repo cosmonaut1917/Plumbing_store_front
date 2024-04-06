@@ -13,7 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-google-maps/api": "^2.19.3",
     "bcrypt": "^5.1.1",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "use-places-autocomplete": "^4.0.1"
+
   }
 }
