@@ -1,9 +1,5 @@
 import '../styles/style.css';
-import React from 'react';
-import App from "../App";
-import Carosel from "../components/Carosel.jsx";
-import InventoryImage from "../components/ExampleCarouselImage.jsx";
-import StoreGrid from "../components/StoreGrid.jsx";
+import ClientGrid from "../components/ClientGrid.jsx";
 
 const styles = {
     card: {
@@ -24,16 +20,14 @@ const styles = {
 };
 
 
-function Store() {
+function Admin() {
     return (
         <div style={styles.card}>
-            <h1 style={styles.heading}><Carosel />
-            </h1>
-            <h2> <StoreGrid /></h2>
+            <h2> <ClientGrid /></h2>
             <p>Our store is located at 1234 Elm St.</p>
             <p>Our store hours are 9am-5pm.</p>
         </div>
     );
 }
 
-export default Store;
+export default Admin;
