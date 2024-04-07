@@ -1,23 +1,23 @@
 import React from "react";
 import "../styles/style.css";
 
-const styles = {
-  card: {
-    margin: 20,
-    background: '#012D76',
-  },
-  heading: {
-    background: '#3f51b5',
-    minHeight: 50,
-    lineHeight: 3.5,
-    fontSize: '1.2rem',
-    color: 'white',
-    padding: '0 20px',
-  },
-  content: {
-    padding: 20,
-  },
-};
+// const styles = {
+//   card: {
+//     margin: 20,
+//     background: '#012D76',
+//   },
+//   heading: {
+//     background: '#3f51b5',
+//     minHeight: 50,
+//     lineHeight: 3.5,
+//     fontSize: '1.2rem',
+//     color: 'white',
+//     padding: '0 20px',
+//   },
+//   content: {
+//     padding: 20,
+//   },
+// };
 
 function Suppliers({ suppliers }) {
   console.log(suppliers)
@@ -43,5 +43,3 @@ function Suppliers({ suppliers }) {
 }
 
 export default Suppliers;
-
-//test

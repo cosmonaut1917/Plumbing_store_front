@@ -25,14 +25,7 @@ function NavTabs() {
           Our Company
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          to="/Login"
-          className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
-        >
-          Login
-        </Link>
-      </li>
+      
       <li className="nav-item">
         <Link
           to="/Suppliers"
@@ -48,6 +41,24 @@ function NavTabs() {
           className={currentPage === '/Store' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
           Store
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
+          to="/Users"
+          className={currentPage === '/Users' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+        >
+          Users
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
+          to="/Login"
+          className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+        >
+          Login
         </Link>
       </li>
 

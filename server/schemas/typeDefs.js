@@ -61,12 +61,20 @@ input ProductInput {
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, phone: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser( firstname: String, lastname: String, contact: String, username: String, email: String): User
+
+    updateUser(_id: ID!, username: String, email: String): User
     deleteUser(_id: ID!): User
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
- 
+    addToCart(product: ProductInput!): Client
+    addProfile(firstname: String!, lastname: String!, contact: String): User
+
+
+    addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
+    updateUser(_id: ID!, username: String, email: String, phone: String): User
+    deleteUser(_id: ID!): User
+
 
   }
 `;
