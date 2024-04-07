@@ -21,7 +21,7 @@ function Users() {
         </div> */}
         <hr />
 
-        <div className="col-12 col-md-10 my-3">
+        <div className="">
           {loading ? (
             <div>Loading...</div>
           ) : (

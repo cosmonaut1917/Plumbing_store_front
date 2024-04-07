@@ -1,6 +1,6 @@
 :root {
   --primary-color: #71A1CF; 
-  --primary-color-light: ##F8FDFF; 
+  --primary-color-light: #F8FDFF; 
   --primary-color-dark: #011a57; 
   --primary-color-tint: #013d96; 
   --primary-color-shade: #011f5b; 
@@ -96,12 +96,5 @@ header img{
   color: var(--text-color-light);
 }
 
-.card-header{
-  background-color: (--complementary-color);
-}
 
-
-.user-card{
-  color:#011a57
-}
 
