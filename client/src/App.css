@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+:root {
+  --primary-color: #71A1CF; 
+  --primary-color-light: ##F8FDFF; 
+  --primary-color-dark: #011a57; 
+  --primary-color-tint: #013d96; 
+  --primary-color-shade: #011f5b; 
+  --text-color-dark: #012D76;
+  --text-color-light: #fdfdfd;
+  --complementary-color: #676b88;
+  --round-large: 10px;
+  --round-small: 0.25rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -79,5 +92,11 @@
 }
 .signup{
   margin: 2rem 0 0 0;
+}
+
+.card-header{
+  background-color: var(--primary-color);
+  max-height: 40px;
+  color: var( --text-color-light)
 }
 

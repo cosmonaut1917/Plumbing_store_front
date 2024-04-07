@@ -8,7 +8,7 @@ import AuthService from '../utils/auth';
 export default function Login() {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [loggedIn, setIsLoggedIn] = useState (false)
-  // const [isAdmin, setIsAdmin] = useState (false)
+  const [isAdmin, setIsAdmin] = useState (false)
   const [getUser, { loading, data, error }] = useLazyQuery(QUERY_SINGLE_USER, {
     fetchPolicy: "no-cache" // Use this policy to prevent using cached result
   });
@@ -28,6 +28,7 @@ export default function Login() {
     event.preventDefault()
     AuthService.logout()
     setIsLoggedIn(false)
+    setIsAdmin(false)
   }
 
  
@@ -56,10 +57,10 @@ export default function Login() {
     setIsLoggedIn(loggedIn)
   },[data])
  
-  // useEffect(()=>{
-  //   const isAdmin = AuthService.isadmin();
-  //   setIsAdmin(isAdmin)
-  // },[data])
+  useEffect(()=>{
+    const isAdmin = AuthService.isAdmin();
+    setIsAdmin(isAdmin)
+  },[data])
 
 return (
   <div>
@@ -97,18 +98,20 @@ return (
       )}
 
       <div className='submit-create'>
-      
-      
       <button type="submit">{loggedIn ? `Logout` : "Login"}</button>
-      
       {!loggedIn && (
       <p  type="button">
       <Link className="signup" to ="/Signup">Create account.</Link>
       </p>
       )}
+    </div>
 
-      
-      </div>
+    {isAdmin && (
+      <p  type="button">
+        <hr />
+      <Link className="clients" to ="/Users">View Clients</Link>
+      </p>
+      )}
 
     </form>
     </div>

@@ -50,17 +50,17 @@ function NavTabs() {
       </li>
       )}
 
-    {isAdmin && (
+    {/* {isAdmin && (
       <li className="nav-item">
         <Link
           to="/Users"
           className={currentPage === '/Users' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
-          Users
+          Admin
         </Link>
       </li>
 
-      )}
+      )} */}
 
       <li className="nav-item">
         <Link

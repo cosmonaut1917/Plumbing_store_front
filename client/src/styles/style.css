@@ -96,3 +96,12 @@ header img{
   color: var(--text-color-light);
 }
 
+.card-header{
+  background-color: (--complementary-color);
+}
+
+
+.user-card{
+  color:#011a57
+}
+

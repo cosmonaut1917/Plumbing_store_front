@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import '../styles/style.css'
 
 const UserList = ({ users, title }) => {
   console.log(users)
@@ -10,28 +11,28 @@ const UserList = ({ users, title }) => {
   return (
     <div>
       {/* <h3 className="text-primary">{title}</h3> */}
-      <div className="flex-row justify-space-between my-4">
+      <div className="flex-row justify-space-between ">
         {users &&
           users.map((user) => (
-            <div key={user._id} className="col-12 col-xl-6">
+            <div key={user._id} className="user-card">
               <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+                <h4 className="card-header">
                   {user.username} <br />
                 </h4>
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+                <h4 className="card-header">
                   {user.email} <br />
                 </h4>
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+                <h4 className="card-header">
                   {user.phone} <br />
                 </h4>
                 
 
-                <Link
+                {/* <Link
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/users/${user._id}`}
                 >
-                  {/* View and endorse their skills. */}
-                </Link>
+                  View and endorse their skills.
+                </Link> */}
               </div>
             </div>
           ))}
