@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const cartSchema = require('./Cart');
 
 
-
+// adding to user model 
 const clientSchema = new Schema(
     {
         
@@ -20,7 +20,7 @@ const clientSchema = new Schema(
             type: String,
             
         },
-        cart: [{cartSchema}]
+        cart: {cartSchema}
 
 
 

@@ -5,10 +5,11 @@ const bcrypt = require('bcrypt');
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find()
+            return User.find().populate('client');
         },
         user: async (parent, { email }) => {
-            return User.findOne({ email })
+            return User.findOne({ email }).populate('client');
+
         },
 
         me: async (parent, args, context) => {
@@ -25,9 +26,7 @@ const resolvers = {
             return Product.findOne({ _id })
 
         },
-        clients: async () => {
-            return Client.find()
-        }
+        
         
 
     },
@@ -61,32 +60,39 @@ const resolvers = {
         deleteUser: async (parent, {_id}) =>{
             return User.findByIdAndDelete({_id})
         },
-        updateUser: async (parent, {_id, username, email, password}) => {
+        updateUser: async (parent, {_id, username, email, password, firstname, lastname, contact},context) => {
             const update = {};
-            if (username) update.username = username;
-            if (email) update.email = email;
-            if (password) {
+            // if (username) update.username = username;
+            // if (email) update.email = email;
+            // if (password) {
                 // Hash the new password before saving it
-                const salt = await bcrypt.genSalt(10);
-                update.password = await bcrypt.hash(password, salt);
-            }
+                // const salt = await bcrypt.genSalt(10);
+            //     update.password = await bcrypt.hash(password, salt);
+            // }
 
             // Update the user in the database
-            const updatedUser = await User.findByIdAndUpdate(
-                _id, 
-                { $set: update }, 
+            if (context.user){
+                const updatedUser = await User.findByIdAndUpdate(
+               { _id: context.user._id},
+                { $set: {username, email,firstname, lastname, contact} }, 
                 { new: true } // Return the updated document
             );
-
             return updatedUser;
+            }
+            
+
+           throw new AuthenticationError('You need to be logged in!');
         },
    
-        addProfile: async (parent, { firstname, lastname, contact }, context ) => {
-            const newClient = await Client.create({ firstname, lastname, contact });
-            const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $set: {firstname: newClient.firstname, lastname:newClient.lastname, contact: newClient.contact} }, { new: true});
-            return updatedUser;
-
-        },
+        
+        // addToCart: async (parent, { product }, context) => {
+        //     if (context.user) {
+        //         const updatedClient = await Client.findOneAndUpdate({_id: context.user._id}, { $push: {cart: {product}} }, { new: true });
+        //         console.log(updatedClient);
+        //         return updatedClient;
+        //     } 
+        //     throw new AuthenticationError('You need to be logged in!');
+        // }
     },
 };
 

@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const clientSchema = require('./Client');
-const adminSchema = require('./Admin');
 
+const cartSchema = require('./Cart');
 
 
 const userSchema = new Schema(
@@ -24,13 +23,19 @@ const userSchema = new Schema(
             minlength: 8,
 
         },
-        client: {
-            type: Schema.Types.ObjectId,
-            ref: 'Client'
+        firstName: {
+            type: String,
+            
         },
-        // admin: {
-        //     adminSchema
-        // }
+        lastName: {
+            type: String,
+            
+        },
+        contact: {
+            type: String,
+            
+        },
+        cart: [{cartSchema}],
     },
 
 
