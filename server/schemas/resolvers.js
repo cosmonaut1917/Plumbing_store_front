@@ -34,7 +34,7 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, { username, email, password, phone }) => {
-            const user = await User.create({ username, email, password, phone });
+            const user = await User.create({ username, email, password, phone, admin });
             const token = signToken(user);
             return { token, user };
         },
@@ -61,11 +61,12 @@ const resolvers = {
         deleteUser: async (parent, {_id}) =>{
             return User.findByIdAndDelete({_id})
         },
-        updateUser: async (parent, {_id, username, email, password, phone}) => {
+        updateUser: async (parent, {_id, username, email, password, phone, admin}) => {
             const update = {};
             if (username) update.username = username;
             if (email) update.email = email;
             if (phone) update.phone = phone;
+            if (admin) update.admin = admin;
             if (password) {
                 // Hash the new password before saving it
                 const salt = await bcrypt.genSalt(10);
