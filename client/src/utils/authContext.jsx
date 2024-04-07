@@ -5,13 +5,15 @@ import AuthService from './auth';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [loggedIn, setLoggedIn] = useState(AuthService.loggedIn());
+    const [loggedIn, setLoggedIn] = useState(AuthService.loggedIn())
+    const [isAdmin, setIsAdmin] = useState(AuthService.isAdmin())
 
     const handleLoginChange = () => {
         setLoggedIn(AuthService.loggedIn());
+        setIsAdmin(AuthService.isAdmin())
     };
 
-    // Consider using a more robust event system or dependency to trigger this update
+    
     useEffect(() => {
         window.addEventListener('loginStatusChange', handleLoginChange);
         return () => {
@@ -20,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ loggedIn, setLoggedIn }}>
+        <AuthContext.Provider value={{ loggedIn, setLoggedIn, isAdmin, setIsAdmin }}>
             {children}
         </AuthContext.Provider>
     );

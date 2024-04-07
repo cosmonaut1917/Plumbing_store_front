@@ -7,8 +7,8 @@ const resolvers = {
         users: async () => {
             return User.find()
         },
-        user: async (parent, { email }) => {
-            return User.findOne({ email })
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
         },
 
         me: async (parent, args, context) => {

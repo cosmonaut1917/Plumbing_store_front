@@ -2,14 +2,13 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import UsersList from '../components/Userslist';
-import { QUERY_USER } from '../utils/queries'; // Adjust the import path as necessary
+import { QUERY_USER } from '../utils/queries'; 
 
 function Users() {
   const { loading, data } = useQuery( QUERY_USER );
 
   const users = data?.users || [];
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>{error} :(</p>;
+
 
   return (
     <main>

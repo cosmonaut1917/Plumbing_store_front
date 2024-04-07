@@ -7,7 +7,7 @@ import { useAuth } from '../utils/authContext'
 
 
 function NavTabs() {
-  const { loggedIn } = useAuth()
+  const { loggedIn, isAdmin } = useAuth()
   const currentPage = useLocation().pathname;
 
 
@@ -50,6 +50,7 @@ function NavTabs() {
       </li>
       )}
 
+    {isAdmin && (
       <li className="nav-item">
         <Link
           to="/Users"
@@ -58,6 +59,8 @@ function NavTabs() {
           Users
         </Link>
       </li>
+
+      )}
 
       <li className="nav-item">
         <Link

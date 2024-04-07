@@ -1,40 +1,70 @@
-import '../App.css'
-import {useState} from 'react';
-import Signup from './Signup';
-import {Link} from "react-router-dom"
-import AuthService from '../utils/auth'
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { useLazyQuery, useQuery } from '@apollo/client';
+import { QUERY_SINGLE_USER } from '../utils/queries';
+import AuthService from '../utils/auth';
+// import other needed components and styles
 
 export default function Login() {
-const [formData, setFormData]=useState({username:"",email:"", password:""})
-const handleInputChange =(event)=>{
-  const {name,value}=event.target
-  console.log(name, value)
-setFormData({...formData,[name]:value})
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [loggedIn, setIsLoggedIn] = useState (false)
+  // const [isAdmin, setIsAdmin] = useState (false)
+  const [getUser, { loading, data, error }] = useLazyQuery(QUERY_SINGLE_USER, {
+    fetchPolicy: "no-cache" // Use this policy to prevent using cached result
+  });
+  
 
-}
-const handleSubmit = async(event) =>{
-    event.preventDefault();
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    try {
-      const response = await AuthService.login(formData.username); // loginUser is a function that sends credentials to the server
-      console.log(response)
-    } catch (error) {
-      console.error('Login error:', error);
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    await getUser({ variables: { username: formData.username } });
+  };
+
+  const handleLogout = async (event) =>{
+    event.preventDefault()
+    AuthService.logout()
+    setIsLoggedIn(false)
+  }
+
+ 
+
+  useEffect(() => {
+    // Check if data is available and there's no error
+    if (data && !loading && !error) {
+      console.log("Queried user data:", data.user);
+      // Check if the user data is present
+      if (data.user) {
+        // Construct the object with the necessary user information
+        const loginDetails = {
+          user_name: data.user.username,
+          isadmin: data.user.admin
+        };
+  
+        // Call AuthService.login with the constructed object
+        AuthService.login(data.user.username, data.user.admin);
+      }
     }
+  }, [data, loading, error]);
+  
 
-    console.log(formData)
-    console.log("submit button")
-    setFormData({ username: "", email: "", password: ""});
-}
+  useEffect(()=>{
+    const loggedIn = AuthService.loggedIn();
+    setIsLoggedIn(loggedIn)
+  },[data])
+ 
+  // useEffect(()=>{
+  //   const isAdmin = AuthService.isadmin();
+  //   setIsAdmin(isAdmin)
+  // },[data])
 
-const loggedIn = AuthService.loggedIn()
-if (loggedIn){
-
-} 
 return (
   <div>
     <h1>{loggedIn ? `Welcome ${AuthService.getToken()}...` : "Login"}</h1>
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={loggedIn ? handleLogout : handleSubmit}>
     
     {!loggedIn && (
         <>
@@ -44,7 +74,7 @@ return (
               type="text" 
               id="username" 
               name="username" 
-              placeholder='Enter Your Email'
+              placeholder='Enter Your Username'
               value={formData.username} // Adjusted from formData.user to formData.username
               onChange={handleInputChange}
               required

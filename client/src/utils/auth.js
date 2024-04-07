@@ -16,6 +16,11 @@ class AuthService {
     return token ? true : false;
   }
 
+  isAdmin(){
+    const token = this.getAdminToken();
+    return token ? true : false;
+  }
+
   //ToDo create decode funttion
   // isTokenExpired(token) {
   //   // Decode the token to get its expiration time that was set by the server
@@ -33,14 +38,20 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  getAdminToken() {
+    return localStorage.getItem('admin_token');
+  }
+
+  login(idToken, adminToken) {
     localStorage.setItem('id_token', idToken);
+    localStorage.setItem('admin_token', adminToken);
     // window.location.assign('/Store');
     window.dispatchEvent(new Event('loginStatusChange'));
   }
 
   logout() {
     localStorage.removeItem('id_token');
+    localStorage.removeItem('admin_token');
     // window.location.reload();
     window.dispatchEvent(new Event('loginStatusChange'));
   }

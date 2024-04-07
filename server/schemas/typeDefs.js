@@ -60,7 +60,7 @@ input ProductInput {
 
   type Query {
     users: [User]
-    user(email: String!): User
+    user(username: String!): User
     me: User
     products: [Product]
     product(_id: ID!): Product
