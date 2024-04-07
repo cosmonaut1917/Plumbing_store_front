@@ -8,9 +8,20 @@ class AuthService {
   loggedIn() {
     const token = this.getToken();
     // If there is a token and it's not expired, return `true`
-    return token && !this.isTokenExpired(token) ? true : false;
+    
+    // ToDo uncomment when decode function si working properly
+    // return token && !this.isTokenExpired(token) ? true : false;
+
+    //ToDo commoent this out when decod is working
+    return token ? true : false;
   }
 
+  isAdmin(){
+    const token = this.getAdminToken();
+    return token ? true : false;
+  }
+
+  //ToDo create decode funttion
   // isTokenExpired(token) {
   //   // Decode the token to get its expiration time that was set by the server
   //   const decoded = decode(token);
@@ -27,14 +38,22 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  getAdminToken() {
+    return localStorage.getItem('admin_token');
+  }
+
+  login(idToken, adminToken) {
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    localStorage.setItem('admin_token', adminToken);
+    // window.location.assign('/Store');
+    window.dispatchEvent(new Event('loginStatusChange'));
   }
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+    localStorage.removeItem('admin_token');
+    // window.location.reload();
+    window.dispatchEvent(new Event('loginStatusChange'));
   }
 }
 

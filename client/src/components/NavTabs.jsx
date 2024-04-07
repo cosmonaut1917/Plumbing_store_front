@@ -1,13 +1,17 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
+import {useState, useEffect} from 'react'
 import '../styles/style.css'
+// import AuthService from '../utils/auth'
+import { useAuth } from '../utils/authContext'
+
 
 
 function NavTabs() {
+  const { loggedIn, isAdmin } = useAuth()
   const currentPage = useLocation().pathname;
 
+
   return (
-    
-    
     <ul className="nav justify-content-end">
       <li className="nav-item">
         <Link
@@ -34,7 +38,8 @@ function NavTabs() {
           Suppliers
         </Link>
       </li>
-
+      
+      {loggedIn && (
       <li className="nav-item">
         <Link
           to="/Store"
@@ -43,22 +48,26 @@ function NavTabs() {
           Store
         </Link>
       </li>
+      )}
 
+    {/* {isAdmin && (
       <li className="nav-item">
         <Link
           to="/Users"
           className={currentPage === '/Users' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
-          Users
+          Admin
         </Link>
       </li>
+
+      )} */}
 
       <li className="nav-item">
         <Link
           to="/Login"
           className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
-          Login
+          {loggedIn ? `Logout` : "Login"}
         </Link>
       </li>
 

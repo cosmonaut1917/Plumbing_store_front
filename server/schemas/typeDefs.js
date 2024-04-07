@@ -1,3 +1,5 @@
+// ToDo add client in usser  needs to be seeded to work with current mongoose data
+
 const typeDefs = `
   type User {
     _id: ID
@@ -53,7 +55,7 @@ input ProductInput {
 
   type Query {
     users: [User]
-    user(email: String!): User
+    user(username: String!): User
     me: User
     products: [Product]
     product(_id: ID!): Product
@@ -61,20 +63,15 @@ input ProductInput {
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!, phone: String!): Auth
+    addUser(username: String!, email: String!, password: String!, phone: String!, admin: Boolean): Auth
+    updateUser(_id: ID!, username: String, email: String, phone: String, admin: Boolean): User
+    deleteUser(_id: ID!): User
+
     login(email: String!, password: String!): Auth
 
-    updateUser(_id: ID!, username: String, email: String): User
-    deleteUser(_id: ID!): User
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
     addToCart(product: ProductInput!): Client
     addProfile(firstname: String!, lastname: String!, contact: String): User
-
-
-    addProduct(productname: String!, description: String!, price: Int!, stock: Int!, image: String): Product
-    updateUser(_id: ID!, username: String, email: String, phone: String): User
-    deleteUser(_id: ID!): User
-
 
   }
 `;

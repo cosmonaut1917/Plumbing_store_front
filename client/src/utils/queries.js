@@ -13,12 +13,13 @@ query allUsers{
 `;
 
 export const QUERY_SINGLE_USER = gql`
-  query singleUser($userId: ID!) {
-    user(userId: $userId) {
+  query singleUser($username: String!) {
+    user(username: $username) {
       _id
-      name
+      username
       email
       phone
+      admin
     }
   }
 `;
