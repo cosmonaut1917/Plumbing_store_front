@@ -5,7 +5,7 @@ import { ADD_USER } from '../utils/mutations';
 import '../App.css'
 
 function Signup() {
-    const [formData, setFormData] = useState({ username: "", email: "", password: "", phone: "" });
+    const [formData, setFormData] = useState({ username: "", email: "", password: "", phone: "", admin: false });
 
    
     const [addUser, { error }] = useMutation(ADD_USER);

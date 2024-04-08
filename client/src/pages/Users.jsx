@@ -3,7 +3,7 @@ import { useQuery, useMutation } from '@apollo/client'
 
 import UsersList from '../components/Userslist'
 import { QUERY_USER } from '../utils/queries'
-import { DELETE_USER, UPDATE_USER } from '../utils/mutations' 
+import { DELETE_USER, UPDATE_USER_ADMIN } from '../utils/mutations' 
 
 function Users() {
   const { loading, data, refectch } = useQuery( QUERY_USER )
@@ -14,7 +14,13 @@ function Users() {
         'users'
       ]
   })
-  const [updateUserAdminStatus] = useMutation(UPDATE_USER)
+  const [updateUserAdminStatus] = useMutation(
+    UPDATE_USER_ADMIN,{
+      refetchQueries: [
+        QUERY_USER,
+        'users'
+      ]
+    })
 
   const handleDeleteUser = async (userId) =>{
     try{
@@ -35,15 +41,16 @@ function Users() {
 
   const handleToggleAdmin = async (userId, isAdmin) => {
     try {
-      await updateUserAdminStatus({variables: {userId, isAdmin}})
+      await updateUserAdminStatus({variables: {id:userId, admin: isAdmin}})
     } catch (error) {
       console.error('Error attempting to promote user to admin',error)
     }
-    try {
-      refetch()
-    } catch (error) {
-      console.error('Error attempting to refetch user',error)
-    }
+
+    // try {
+    //   refetch()
+    // } catch (error) {
+    //   console.error('Error attempting to refetch user',error)
+    // }
  
   }
 

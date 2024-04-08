@@ -54,19 +54,31 @@ const resolvers = {
         deleteUser: async (parent, { _id }) => {
             return User.findByIdAndDelete(_id);
         },
-        updateUser: async (parent, { _id, username, email, password, phone, admin }) => {
-            const update = {};
-            if (username) update.username = username;
-            if (email) update.email = email;
-            if (phone) update.phone = phone;
-            if (typeof admin !== 'undefined') update.admin = admin;
-            if (password) {
-                update.password = await bcrypt.hash(password, 10);
-            }
 
-            const updatedUser = await User.findByIdAndUpdate(_id, { $set: update }, { new: true });
-            return updatedUser;
+        updateUser: async (parent, { _id, username, email, password, phone, admin }) => {
+            try{
+                const update = {};
+                if (username) update.username = username;
+                if (email) update.email = email;
+                if (phone) update.phone = phone;
+                if (typeof admin !== 'undefined') update.admin = admin;
+                if (password) {
+                    update.password = await bcrypt.hash(password, 10);
+                }
+
+                const updatedUser = await User.findByIdAndUpdate(_id, { $set: update }, { new: true });
+
+                if (!updatedUser) {
+                throw new Error("User not found");
+                }
+            
+                return updatedUser;
+            } catch (error) {
+                console.error("Error updating user:", error);
+                throw new Error("Failed to update user");
+            }
         },
+
         addProfile: async (parent, { firstname, lastname, contact }, context) => {
             if (!context.user) {
                 throw new AuthenticationError('You must be logged in to perform this action');
