@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import '../styles/style.css';
 import deleteIcon from '../assets/images/trash.png'
+import { DELETE_USER } from '../utils/mutations';
+import { useQuery, useMutation } from '@apollo/client';
 
-const UserList = ({ users, title }) => {
+const UserList = ({ users, title, onDeleteUser, onToggleAdmin  }) => {
   console.log(users)
   
   if (!users.length) {
@@ -30,10 +32,16 @@ const UserList = ({ users, title }) => {
               </div>
 
               <aside className='side-icons'>
-                <img src={deleteIcon} alt="toilet icon trash" />
+                <img src={deleteIcon} alt="toilet icon trash" onClick={(e)=>onDeleteUser(user._id)}/>
                 <div className="form-check form-switch">
-                  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Admin</label>
-                  <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                  <label className="form-check-label" htmlFor={`flexSwitchCheck${user._id}`}>Admin</label>
+                  <input 
+                   className="form-check-input"
+                   type="checkbox" 
+                   id={`flexSwitchCheck${user._id}`} 
+                   checked={user.admin} 
+                   onChange={(e)=> onToggleAdmin(user._id, e.target.checked)}
+                   />
                 </div>
 
               </aside>
