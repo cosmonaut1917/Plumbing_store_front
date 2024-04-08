@@ -1,36 +1,36 @@
+// ToDo add client in user  needs to be seeded to work with current mongoose data
+
 const typeDefs = `
   type User {
     _id: ID
     username: String!
     email: String!
     password: String
+    firstName: String
+    lastName: String
+    phone: String!
+    cart: [Cart]
   }
 type Admin {
     adminId: ID
-    firstname: String!
-    lastname: String!
+    firstName: String!
+    lastName: String!
     company: String!
     bid: [Bid]
 
 }
-type Client {
-    clientId: ID
-    firstname: String!
-    lastname: String!
-    contact: String!
-    cart: [Cart]
-}
+
 type Bid {
     bidId: ID
     product: [Product]
     total: Int!
-    client: Client
+    
 }
 type Cart {
     cartId: ID
     product: [Product]
     total: Int!
-    client: Client
+    
 }
 type Product {
     _id: ID
@@ -55,23 +55,25 @@ input ProductInput {
 
   type Query {
     users: [User]
-    user(email: String!): User
+    user(username: String!): User
     me: User
     products: [Product]
     product(_id: ID!): Product
+    
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    updateUser(_id: ID!, username: String, email: String): User
+    addUser(username: String!, email: String!, password: String!, phone: String!): Auth
+    updateUser(_id: ID!, username: String, email: String, phone: String, admin: Boolean): User
     deleteUser(_id: ID!): User
-    addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
 
+    login(email: String!, password: String!): Auth
+
+    addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
+    addToCart(productArray: [ProductInput]!): User
+    addProfile(firstname: String!, lastname: String!, contact: String): User
 
   }
 `;
 
 module.exports = typeDefs;
-
-
