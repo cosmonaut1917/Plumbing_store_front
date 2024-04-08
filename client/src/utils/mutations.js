@@ -26,7 +26,7 @@ export const ADD_USER = gql`
 
 export const UPDATE_USER = gql`
   mutation updateUser($id: ID!, $username: String!, $email: String!, $phone: String!) {
-    updateUser(id: $id, username: $username, email: $email) {
+    updateUser(_id: $id, username: $username, email: $email) {
       user {
         _id
         username
@@ -38,7 +38,7 @@ export const UPDATE_USER = gql`
 
 export const DELETE_USER = gql`
   mutation deleteUser($id: ID!) {
-    deleteUser(id: $id) {
+    deleteUser(_id: $id) {
       _id
     }
   }
