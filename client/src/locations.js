@@ -1,11 +1,11 @@
 
 // This file contains the data for the locations page. Each location has a name, address, image, size, and phone number. The data is exported to the locations page to be displayed.
-import Richfield from "../src/assets/images/richfield.jpg";
-import Logan from "../src/assets/images/logan.jpg";
-import Ogden from "../src/assets/images/ogden.png";
-import SaltLakeCity from "../src/assets/images/salt-lake-city.jpg";
-import Orem from "../src/assets/images/orem.jpg";
-import CederCity from "../src/assets/images/ceder-city.jpg";
+import Richfield from "/src/assets/images/richfield.jpg";
+import Logan from "/src/assets/images/logan.jpg";
+import Ogden from "/src/assets/images/ogden.png";
+import SaltLakeCity from "/src/assets/images/salt-lake-city.jpg";
+import Orem from "/src/assets/images/orem.jpg";
+import CederCity from "/src/assets/images/ceder-city.jpg";
 
 const locations = [
     {
