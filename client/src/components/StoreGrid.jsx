@@ -29,10 +29,11 @@ function StoreGrid() {
         event.preventDefault();
         console.log(cartItem);
         try {
+            console.log('HELLOOOO')
             const { data } = await addToCart({
                 variables: { cartItem }
             });
-            
+            // look at front end resolver backend resolver typedefs and addtocart mutation
             // Reset form data after successful submission
             console.log(data)
             setCartItem([{ productid: '', quantity: 0, productname: '', price: 0 }]);

@@ -9,7 +9,7 @@ const typeDefs = `
     firstname: String
     lastname: String
     contact: String
-    cart: [Cart]
+    cart: [Product]
   }
 type Admin {
     adminId: ID
@@ -65,13 +65,13 @@ input ProductInput {
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!, phone: String!): Auth
-    updateUser(ID: ID!, username: String, firstname: String, lastname: String, contact: String, email: String, phone: String, admin: Boolean): User
+    updateUser(ID: ID!, username: String!, firstname: String!, lastname: String!, contact: String!, email: String, phone: String, admin: Boolean): User
     deleteUser(_id: ID!): User
 
     login(email: String!, password: String!): Auth
 
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
-    addToCart(products: ID!): Cart
+    addToCart(product: ID!): User
     addProfile(firstname: String!, lastname: String!, contact: String): User
 
   }

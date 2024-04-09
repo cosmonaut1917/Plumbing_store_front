@@ -45,7 +45,7 @@ export const DELETE_USER = gql`
 `;
 
 export const ADD_TO_CART = gql`
-  mutation addToCart($cartItem: [cart]!) {
+  mutation addToCart($cartItem: Product!) {
     addUser(cartItem: $cartItem) {
       token
       user {

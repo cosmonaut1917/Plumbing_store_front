@@ -40,7 +40,12 @@ const userSchema = new Schema(
             type: String,
             
         },
-        cart: [{cartSchema}],
+        cart: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Product',
+            },
+        ],
     },
 
 

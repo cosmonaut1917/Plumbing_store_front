@@ -87,12 +87,12 @@ const resolvers = {
         },
    
         
-        addToCart: async (parent, { products }, context) => {
+        addToCart: async (parent, { product }, context) => {
 
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate({_id: context.user._id}, { $push: {cart: [products]} }, { new: true });
+                const updatedUser = await User.findOneAndUpdate({_id: context.user._id}, { $push: {cart: product} }, { new: true });
                 console.log(updatedUser);
-                return updatedUser;
+                return updatedUser.cart;
             } 
             throw new AuthenticationError('You need to be logged in!');
         }
