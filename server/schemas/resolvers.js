@@ -29,9 +29,14 @@ const resolvers = {
     },
 
     Mutation: {
+// <<<<<<< feature/deployment
+//         addUser: async (parent, { username, email, password, phone }) => {
+//             const user = await User.create({ username, email, password, phone });
+
         addUser: async (parent, { username, email, password, phone, admin }) => {
             const hashedPassword = await bcrypt.hash(password, 10);
             const user = await User.create({ username, email, password: hashedPassword, phone, admin });
+
             const token = signToken(user);
             return { token, user };
         },

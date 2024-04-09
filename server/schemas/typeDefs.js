@@ -1,4 +1,6 @@
+
 // ToDo add client in usser  needs to be seeded to work with current mongoose data
+
 
 const typeDefs = `
   type User {
@@ -6,15 +8,15 @@ const typeDefs = `
     username: String!
     email: String!
     password: String
-    firstname: String
-    lastname: String
-    contact: String
+    firstName: String
+    lastName: String
+    phone: String!
     cart: [Cart]
   }
 type Admin {
     adminId: ID
-    firstname: String!
-    lastname: String!
+    firstName: String!
+    lastName: String!
     company: String!
     bid: [Bid]
 
@@ -77,5 +79,3 @@ input ProductInput {
 `;
 
 module.exports = typeDefs;
-
-
