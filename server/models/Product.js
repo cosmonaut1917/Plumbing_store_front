@@ -18,14 +18,11 @@ const productSchema = new Schema(
         price: {
             type: Number,
             required: true,
-
-
         },
         stock: {
             type: Number,
             required: true,
         },
-        
         image: {
             type: String,
           default: 'https://via.placeholder.com/150',
@@ -39,9 +36,6 @@ const productSchema = new Schema(
         },
     }
 );
-
-
-
 
 
 const Product = model('Product', productSchema);

@@ -2,18 +2,32 @@ const db= require("../config/connection")
 const {User,Product}=require("../models")
 const cleanDB= require("./cleanDB")
 const productData=require("./products.json")
+const userData=require("./user.json")
+
 
 
 db.once('open', async () => {
   await cleanDB('Product', 'plumbingstore');
+  try{
+    await cleanDB('users', 'plumbingstore')
+  }catch (e){
+    console.error("Issue cleaning User DB",e)
+  }
+ 
 
   await Product.insertMany(productData);
+  try {
+    await User.insertMany(userData)
+  } catch (error) {
+    console.error(error)
+  }
+  
 
   console.log('Products seeded!');
   process.exit(0);
 });
 
-// Sample data
+// // Sample data
 // const productsData = [
 //   {
 //     name: 'Pipe Fittings',
@@ -64,5 +78,5 @@ db.once('open', async () => {
 
 
 
-// Call the seedProducts function
+// // Call the seedProducts function
 // seedProducts();

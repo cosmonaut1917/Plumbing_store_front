@@ -1,8 +1,8 @@
-
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const clientSchema = require('./Client');
+const adminSchema = require('./Admin');
 
-const cartSchema = require('./Cart');
 
 
 const userSchema = new Schema(
@@ -29,19 +29,30 @@ const userSchema = new Schema(
             required: true,
             minlength: 8,
         },
-        firstName: {
-            type: String,
+        // client: {
+        //     type: Schema.Types.ObjectId,
+        //     ref: 'Client'
+        // },
+        admin: {
+            type: Boolean,
+            default: false
+        }
+        // admin: {
+        //     adminSchema
+        // }
+        // firstName: {
+        //     type: String,
             
-        },
-        lastName: {
-            type: String,
+        // },
+        // lastName: {
+        //     type: String,
             
-        },
-        contact: {
-            type: String,
+        // },
+        // contact: {
+        //     type: String,
             
-        },
-        cart: [{cartSchema}],
+        // },
+        // cart: [{cartSchema}],
     },
 
 

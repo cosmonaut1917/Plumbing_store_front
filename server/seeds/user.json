@@ -1,0 +1,44 @@
+[
+    {
+      "username": "theron",
+      "email": "theron@gmail.com",
+      "password": "password",
+      "phone": "801-555-4785",
+      "admin": true
+    },
+    {
+      "username": "travis",
+      "email": "travis@gmail.com",
+      "password": "password",
+      "phone": "801-867-5309",
+      "admin": true
+    },
+    {
+      "username": "tony",
+      "email": "tony@gmail.com",
+      "password": "password",
+      "phone": "801-555-6436",
+      "admin": true
+    },
+    {
+      "username": "james",
+      "email": "james@gmail.com",
+      "password": "password",
+      "phone": "801-555-8758",
+      "admin": true
+    },
+    {
+        "username": "sadiebugtheladiebug",
+        "email": "sadie@gmail.com",
+        "password": "password",
+        "phone": "801-555-1234",
+        "admin": false
+      },
+      {
+        "username": "deleteme",
+        "email": "delme@gmail.com",
+        "password": "password",
+        "phone": "801-555-5555",
+        "admin": false
+      }
+]

@@ -1,5 +1,5 @@
 
-import  { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Card from 'react-bootstrap/Card';
 import locations from '../locations.js';

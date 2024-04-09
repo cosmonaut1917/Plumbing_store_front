@@ -21,7 +21,7 @@ function StoreGrid() {
         const productid = event.target.getAttribute('data-productid');
         const productname = event.target.getAttribute('data-productname');
         const price = event.target.getAttribute('data-price');
-        setCartItem([...cartItem, { productid, quantity: 1, productname, price }]);
+        setCartItem([...cartItem, { productid: productid, quantity: 1, productname: productname, price: price }]);
         console.log(cartItem);
 
     }
@@ -37,7 +37,7 @@ function StoreGrid() {
             console.log(data)
             setCartItem([{ productid: '', quantity: 0, productname: '', price: 0 }]);
         } catch (e) {
-            console.error("Issue adding user info to database", e);
+            console.error("Issue adding products to cart", e);
         
         }
     }
