@@ -87,9 +87,10 @@ const resolvers = {
         },
    
         
-        addToCart: async (parent, { productArray }, context) => {
+        addToCart: async (parent, { products }, context) => {
+
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate({_id: context.user._id}, { $push: {cart: [productArray]} }, { new: true });
+                const updatedUser = await User.findOneAndUpdate({_id: context.user._id}, { $push: {cart: [products]} }, { new: true });
                 console.log(updatedUser);
                 return updatedUser;
             } 

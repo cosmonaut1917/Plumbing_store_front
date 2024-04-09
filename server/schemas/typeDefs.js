@@ -59,12 +59,13 @@ input ProductInput {
     me: User
     products: [Product]
     product(_id: ID!): Product
+    cart(_id: ID!): Cart
     
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!, phone: String!): Auth
-    updateUser(_id: ID!, username: String, email: String, phone: String, admin: Boolean): User
+    updateUser(ID: ID!, username: String, firstname: String, lastname: String, contact: String, email: String, phone: String, admin: Boolean): User
     deleteUser(_id: ID!): User
 
     login(email: String!, password: String!): Auth
