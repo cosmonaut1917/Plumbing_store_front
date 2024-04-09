@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { useLazyQuery, useQuery } from '@apollo/client';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../utils/queries';
+import { LOGIN_USER } from '../utils/mutations';
 import AuthService from '../utils/auth';
 // import other needed components and styles
 
 export default function Login() {
-  const [formData, setFormData] = useState({ username: "", password: "" });
-  const [loggedIn, setIsLoggedIn] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(false)
-  const [getUser, { loading, data, error }] = useLazyQuery(QUERY_SINGLE_USER, {
-    fetchPolicy: "no-cache" // Use this policy to prevent using cached result
-  });
+  const [formData, setFormData] = useState({ email:"", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+  // const [loggedIn, setIsLoggedIn] = useState(false)
+  // const [isAdmin, setIsAdmin] = useState(false)
+  // const [getUser, { loading, data, error }] = useLazyQuery(QUERY_SINGLE_USER, {
+  //   fetchPolicy: "no-cache" // Use this policy to prevent using cached result
+  // });
 
 
   const handleInputChange = (event) => {
@@ -21,7 +23,16 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await getUser({ variables: { username: formData.username } });
+   try {
+    const { data } = await login({
+      variables: { ...formData },
+    });
+console.log(data)
+    AuthService.login(data.login.token);
+    console.log(AuthService.loggedIn())
+   } catch (error) {
+    console.log(error)
+   }
   };
 
   const handleLogout = async (event) => {
@@ -72,11 +83,11 @@ export default function Login() {
           <div>
             <input
               className="input-field"
-              type="text"
-              id="username"
-              name="username"
-              placeholder='Enter Your Username'
-              value={formData.username} // Adjusted from formData.user to formData.username
+              type="email"
+              id="email"
+              name="email"
+              placeholder='Enter Your email'
+              value={formData.email} // Adjusted from formData.user to formData.username
               onChange={handleInputChange}
               required
             />
