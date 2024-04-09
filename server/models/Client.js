@@ -1,14 +1,11 @@
-const { Schema, Types } = require('mongoose');
-const cartSchema = require('./Cart');
+const { Schema, model } = require('mongoose');
+
 
 
 
 const clientSchema = new Schema(
     {
-        clientId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
-        },
+        
         firstname: {
             type: String,
             required: true,
@@ -21,9 +18,9 @@ const clientSchema = new Schema(
         },
         contact: {
             type: String,
-            required: true,
+            
         },
-        cart: [{cartSchema}]
+       
 
 
 
@@ -42,6 +39,7 @@ const clientSchema = new Schema(
 
 
 
+const Client = model('Client', clientSchema);
 
 
-module.exports = clientSchema;
+module.exports = Client;

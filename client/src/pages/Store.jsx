@@ -1,6 +1,5 @@
 import '../styles/style.css';
 import React from 'react';
-import App from "../App";
 import Carosel from "../components/Carosel.jsx";
 import InventoryImage from "../components/ExampleCarouselImage.jsx";
 import StoreGrid from "../components/StoreGrid.jsx";

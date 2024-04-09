@@ -1,13 +1,17 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import '../styles/style.css'
+import AuthService from '../utils/auth'
+
+
 
 
 function NavTabs() {
+const [loggedIn] = useState(AuthService.loggedIn())
   const currentPage = useLocation().pathname;
 
+
   return (
-    
-    
     <ul className="nav justify-content-end">
       <li className="nav-item">
         <Link
@@ -25,14 +29,7 @@ function NavTabs() {
           Our Company
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          to="/Login"
-          className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
-        >
-          Login
-        </Link>
-      </li>
+
       <li className="nav-item">
         <Link
           to="/Suppliers"
@@ -42,14 +39,45 @@ function NavTabs() {
         </Link>
       </li>
 
+     {loggedIn && (
+        <li className="nav-item">
+          <Link
+            to="/Store"
+            className={currentPage === '/Store' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+          >
+            Store
+          </Link>
+        </li>
+     )}
+
+      {/* {isAdmin && (
       <li className="nav-item">
         <Link
-          to="/Store"
-          className={currentPage === '/Store' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+          to="/Users"
+          className={currentPage === '/Users' ? 'nav-bar nav-bar-active' : 'nav-bar'}
         >
-          Store
+          Admin
         </Link>
       </li>
+
+      )} */}
+    {!loggedIn && (
+        <li className="nav-item">
+          <Link
+            to="/Login"
+            className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
+          >
+            Login
+          </Link>
+        </li>
+    )}
+     {loggedIn && (
+        <li className="nav-item">
+       <button onClick={() => {AuthService.logout()} } className="nav-bar">Logout</button>
+        </li>
+     )}
+      
+  
 
     </ul>
   );

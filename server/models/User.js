@@ -1,7 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const clientSchema = require('./Client');
+const Cart = require('./Cart');
 const adminSchema = require('./Admin');
+
+
 
 
 
@@ -18,18 +21,41 @@ const userSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/, 'Must use a valid email address'],
         },
+        phone: {
+            type: String,
+            // required: false,
+            unique: true,
+            // match: [/.+@.+\..+/, 'Must use a valid email address'],
+        },
         password: {
             type: String,
             required: true,
             minlength: 8,
-
         },
-        // client: {
-        //     clientSchema
-        // },
+        client: {
+            type: Schema.Types.ObjectId,
+            ref: 'Client'
+        },
+        admin: {
+            type: Boolean,
+            default: false
+        },
         // admin: {
         //     adminSchema
         // }
+        // firstName: {
+        //     type: String,
+            
+        // },
+        // lastName: {
+        //     type: String,
+            
+        // },
+        // contact: {
+        //     type: String,
+            
+        // },
+        cart: [Cart.schema],
     },
 
 
