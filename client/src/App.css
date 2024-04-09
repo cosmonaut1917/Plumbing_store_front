@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+:root {
+  --primary-color: #71A1CF; 
+  --primary-color-light: #7e819b; 
+  --primary-color-dark: #011a57; 
+  --primary-color-tint: #013d96; 
+  --primary-color-shade: #011f5b; 
+  --text-color-dark: #012D76;
+  --text-color-light: #fdfdfd;
+  --complementary-color: #676b88;
+  --round-large: 10px;
+  --round-small: 0.25rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -67,7 +80,6 @@
 
 .submit-create{
   display: flex;
-  /* border: 1px black solid; */
   justify-content: center;
   align-content: center;
 }
@@ -80,4 +92,85 @@
 .signup{
   margin: 2rem 0 0 0;
 }
+
+.user-card {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centers the card in the middle of its parent */
+  padding: 5px 0px; /* Adds some padding inside each user-card */
+  box-sizing: border-box; /* Ensures padding does not affect the overall width */
+  width: 600px; /* Set a specific width for each user-card */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+  padding: 1em;
+  display: flex;
+  flex-direction: column; /* Organizes the children of card vertically */
+  align-items: center; /* Centers the children of card horizontally */
+  /* max-width: 600px; */
+  min-width: 500px;
+  border: none;
+}
+
+.top, .bot {
+  background-color: var(--primary-color); /* Sets the background color for top and bottom elements */
+  color: var(--text-color-light)
+}
+
+.center {
+  background-color: rgb(212, 226, 252); /* Sets the background color for the center element */
+}
+
+.top, .center, .bot {
+  padding: 3px 20px; /* Adds padding around the content */
+  min-height: fit-content; /* Ensures the minimum height is based on its content */
+  display: flex; /* Use flexbox for center alignment and to help with sizing */
+  justify-content: left; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  width: 100%; /* Ensures each element takes up the full width of its parent */
+  border-radius: 5px;
+}
+
+.user-card img{
+  width: 30px;
+  height: 30px;
+}
+
+.side-icons{
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-check{
+
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 2px;
+    margin: 0 20px;
+    align-items: baseline;
+}
+
+.form-check-input{
+  display:flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  padding: 10px 21px;
+}
+
+.clients:hover{
+  color: var (--text-color-dark);
+  background-color: var(var(--primary-color-dark));
+}
+
+
+
+
 

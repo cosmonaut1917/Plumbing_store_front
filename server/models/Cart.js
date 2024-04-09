@@ -22,10 +22,6 @@ const cartSchema = new Schema(
             type: Number,
             required: true,
         },
-        client: {
-            type: Schema.Types.ObjectId,
-            ref: 'Client',
-        },
 
 
 

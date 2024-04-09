@@ -1,11 +1,11 @@
 :root {
   --primary-color: #71A1CF; 
-  --primary-color-light: ##F8FDFF; 
+  --primary-color-light: #F8FDFF; 
   --primary-color-dark: #011a57; 
   --primary-color-tint: #013d96; 
   --primary-color-shade: #011f5b; 
   --text-color-dark: #012D76;
-  --text-color-light: #fdfdfd;
+  --text-color-light: #e3f4ff;
   --complementary-color: #676b88;
   --round-large: 10px;
   --round-small: 0.25rem;
@@ -86,13 +86,29 @@ header img{
   background-color: var(--primary-color-light);
   color: var(--text-color-dark);
   padding: 0.5rem 1rem; 
-  border-radius: 0.25rem;
+  /* border-radius: 0.25rem; */
   text-decoration: none !important;
   border-radius: var(--round-small);
+}
+.nav-bar:hover {
+  background-color: rgba(103, 107, 176, 0.25);
+  color: var(--text-color-dark);
+  padding: 0.5rem 1rem; 
+  /* border-radius: 0.25rem; */
+  text-decoration: none !important;
+  border-radius: var(--round-small);
+  border: .5px dashed rgb(226, 226, 226);
 }
 
 .nav-bar-active{
   background-color: var(--complementary-color);
   color: var(--text-color-light);
 }
+
+.clients:hover{
+  color: var (--text-color-dark)
+}
+
+
+
 

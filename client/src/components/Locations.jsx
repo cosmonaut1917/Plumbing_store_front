@@ -1,8 +1,43 @@
 
-
+import  { useState, useCallback } from 'react';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import Card from 'react-bootstrap/Card';
-
 import locations from '../locations.js';
+
+function MyComponent({ location }) {
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "AIzaSyD90yoVrmn3EJFnQWoeRKcmrCwdNCcRKTc"
+    })
+
+    const containerStyle = {
+        width: '600px',
+        height: '400px'
+    };
+
+    const [map, setMap] = useState(null);
+
+    const onLoad = useCallback(function callback(map) {
+        setMap(map);
+    }, []);
+
+    const onUnmount = useCallback(function callback() {
+        setMap(null);
+    }, []);
+
+    return isLoaded ? (
+        <div style={{ marginBottom: '20px' }}>
+            <GoogleMap
+                mapContainerStyle={containerStyle}
+                zoom={18}
+                center={location.map}
+                onLoad={onLoad}
+                onUnmount={onUnmount}
+            />
+        </div>
+    ) : <></>;
+}
+
 function Locations() {
     const styles = {
         container: {
@@ -31,7 +66,7 @@ function Locations() {
             fontSize: '1rem',
             textAlign: 'left',
         }
-    }
+    };
 
 
     return (
@@ -48,7 +83,11 @@ function Locations() {
                                 Address: {location.address}
                                 <br />
                                 Hours: {location.hours}
+
+                                <br />
                             </Card.Text>
+                            <MyComponent location={location} /> {/* Pass location as a prop */}
+
                         </Card.Body>
                     </Card>
                 </div>

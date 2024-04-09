@@ -1,4 +1,6 @@
-// ToDo add client in user  needs to be seeded to work with current mongoose data
+
+// ToDo add client in usser  needs to be seeded to work with current mongoose data
+
 
 const typeDefs = `
   type User {
