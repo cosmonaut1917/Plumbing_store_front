@@ -22,7 +22,7 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(formData.email)
+    console.log("I did it")
     await login({ variables: { email: formData.email,password:formData.password} });
     window.location.href='/Store'
   };
