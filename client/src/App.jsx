@@ -17,7 +17,7 @@ function App() {
   // The Outlet component will conditionally swap between the different pages according to the URL
   return (
     <ApolloProvider client={client}>
-      <AuthProvider>
+      {/* <AuthProvider> */}
     <header className=''> 
    
     <Title className = 'title' />
@@ -28,7 +28,7 @@ function App() {
       <Outlet />
       </main>
       <Footer />
-      </AuthProvider>
+      {/* </AuthProvider> */}
     </ApolloProvider>
   );
 }

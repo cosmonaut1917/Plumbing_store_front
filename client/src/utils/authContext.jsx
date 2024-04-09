@@ -1,16 +1,16 @@
 // src/context/AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import AuthService from './auth';
+// import AuthService from './auth';
 
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [loggedIn, setLoggedIn] = useState(AuthService.loggedIn())
-    const [isAdmin, setIsAdmin] = useState(AuthService.isAdmin())
+    // const [loggedIn, setLoggedIn] = useState(AuthService.loggedIn())
+    // const [isAdmin, setIsAdmin] = useState(AuthService.isAdmin())
 
     const handleLoginChange = () => {
-        setLoggedIn(AuthService.loggedIn());
-        setIsAdmin(AuthService.isAdmin())
+        // setLoggedIn(AuthService.loggedIn());
+        // setIsAdmin(AuthService.isAdmin())
     };
 
     
@@ -21,11 +21,11 @@ export const AuthProvider = ({ children }) => {
         };
     }, []);
 
-    return (
-        <AuthContext.Provider value={{ loggedIn, setLoggedIn, isAdmin, setIsAdmin }}>
-            {children}
-        </AuthContext.Provider>
-    );
+    // return (
+    //     <AuthContext.Provider value={{ loggedIn, setLoggedIn, isAdmin, setIsAdmin }}>
+    //         {children}
+    //     </AuthContext.Provider>
+    // );
 };
 
-export const useAuth = () => useContext(AuthContext);
+// export const useAuth = () => useContext(AuthContext);

@@ -3,11 +3,11 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import '../App.css'
-
+// import { useAuth } from '../utils/authContext';
 function Signup() {
     const [formData, setFormData] = useState({ username: "", email: "", password: "", phone: "", admin: false });
+    // const { loggedIn, setLoggedIn } = useAuth()
 
-   
     const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
@@ -28,10 +28,10 @@ function Signup() {
                 variables: { ...formData }
             });
             console.log("Form Data:", data); // Optional: Handle the response data as needed
-
+            setLoggedIn(true)
             // Reset form data after successful submission
             setFormData({ username: "", email: "", password: "", phone: "" });
-
+            window.location.assign('/Store')
             // Optional: Redirect or perform further actions upon success
             // Auth.login(data.addUser.token); // Assuming your mutation returns a token for authentication
         } catch (e) {
@@ -56,12 +56,12 @@ function Signup() {
                         required
                     />
                 </div>
-   
+
 
                 <div>
                     {/* <label className="label" htmlFor="email">Email:</label> */}
                     <input
-                    className="input-field"
+                        className="input-field"
                         placeholder='Enter Your Email'
                         type="email"
                         id="email"
@@ -74,7 +74,7 @@ function Signup() {
                 <div>
                     {/* <label className="label" htmlFor="phone">Phone:</label> */}
                     <input
-                    className="input-field"
+                        className="input-field"
                         placeholder='Phnone Number'
                         type="phone"
                         id="phone"
@@ -87,7 +87,7 @@ function Signup() {
                 <div>
                     {/* <label className="label" htmlFor="password">Password:</label> */}
                     <input
-                    className="input-field"
+                        className="input-field"
                         placeholder='Create a Password'
                         type="password"
                         id="password"
