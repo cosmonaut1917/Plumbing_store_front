@@ -27,9 +27,9 @@ type Bid {
     
 }
 type Cart {
-    cartId: ID
-    product: [Product]
-    total: Int!
+  _id: ID
+  purchaseDate: String
+  products: [Product]
     
 }
 type Product {
@@ -70,7 +70,7 @@ input ProductInput {
     login(email: String!, password: String!): Auth
 
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
-    addToCart(productArray: [ProductInput]!): User
+    addToCart(products: ID!): Cart
     addProfile(firstname: String!, lastname: String!, contact: String): User
 
   }
