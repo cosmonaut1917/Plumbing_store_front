@@ -73,23 +73,11 @@ const [loggedIn] = useState(AuthService.loggedIn())
     )}
      {loggedIn && (
         <li className="nav-item">
-          <Link
-            to="/Logout"
-            className={currentPage === '/Logout' ? 'nav-bar nav-bar-active' : 'nav-bar'}
-          >
-            Logout
-          </Link>
+       <button onClick={() => {AuthService.logout()} } className="nav-bar">Logout</button>
         </li>
      )}
       
-      {/* <li className="nav-item">
-        <Link
-          to="/Login"
-          className={currentPage === '/Login' ? 'nav-bar nav-bar-active' : 'nav-bar'}
-        >
-          {loggedIn ? `Logout` : "Login"}
-        </Link>
-      </li> */}
+  
 
     </ul>
   );

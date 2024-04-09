@@ -1,14 +1,11 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 
 
 const cartSchema = new Schema(
     {
-        cartId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
-        },
+       
         product: [{
             type: Schema.Types.ObjectId,
             ref: 'Product',
@@ -22,10 +19,7 @@ const cartSchema = new Schema(
             type: Number,
             required: true,
         },
-        client: {
-            type: Schema.Types.ObjectId,
-            ref: 'Client',
-        },
+     
 
 
 
@@ -49,4 +43,6 @@ const cartSchema = new Schema(
 
 
 
-module.exports = cartSchema;
+const Cart = model('Cart', cartSchema);
+
+module.exports =Cart;

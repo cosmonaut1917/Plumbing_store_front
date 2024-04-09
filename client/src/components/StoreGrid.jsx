@@ -10,21 +10,23 @@ import Button from 'react-bootstrap/Button';
 
 
 function StoreGrid() {
-    const [cartItem, setCartItem] = useState([{ productid: '', quantity: 0, productname: '', price: 0 }]);
+    const [cart, setCart] = useState([]);
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
-    const [addToCart] = useMutation(ADD_TO_CART);
+    // const [addToCart] = useMutation(ADD_TO_CART);
     console.log(data);
     const productsData = data?.products || [];
     const handleAddCart = async (event) => {
         event.preventDefault();
         const productid = event.target.getAttribute('data-productid');
-        const productname = event.target.getAttribute('data-productname');
-        const price = event.target.getAttribute('data-price');
-        setCartItem([...cartItem, { productid, quantity: 1, productname, price }]);
-        console.log(cartItem);
+        const itemInCart = cart.find((cartItem) => cartItem._id === productid);
+        
+       
+    
+        
 
     }
+   
     const handleCheckout = async (event) => {
         event.preventDefault();
         console.log(cartItem);
@@ -43,7 +45,7 @@ function StoreGrid() {
     }
     return (
         <Container>
-            <Button type='button' onClick={handleCheckout}>Checkout</Button>
+            {/* <Button type='button' onClick={handleCheckout}>Checkout</Button> */}
             {productsData.map((productsData, index) => (
                 <Row key={index}>
                     <Col>

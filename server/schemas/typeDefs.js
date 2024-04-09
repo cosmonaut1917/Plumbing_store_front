@@ -9,6 +9,7 @@ const typeDefs = `
     
     phone: String!
     admin: Boolean
+    cart: [Cart]
   }
 type Admin {
     adminId: ID
@@ -34,8 +35,9 @@ type Bid {
 type Cart {
     cartId: ID
     product: [Product]
-    total: Int!
-    client: Client
+    quantity: Int
+    total: Float!
+
 }
 type Product {
     _id: ID
@@ -75,7 +77,7 @@ input ProductInput {
     login(email: String!, password: String!): Auth
 
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
-    addToCart(product: ProductInput!): Client
+    addToCart(product: [ID]!): User
     addProfile(firstname: String!, lastname: String!, contact: String): User
 
   }

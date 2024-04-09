@@ -1,7 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const clientSchema = require('./Client');
+const Cart = require('./Cart');
 const adminSchema = require('./Admin');
+
+
 
 
 
@@ -36,7 +39,7 @@ const userSchema = new Schema(
         admin: {
             type: Boolean,
             default: false
-        }
+        },
         // admin: {
         //     adminSchema
         // }
@@ -52,7 +55,7 @@ const userSchema = new Schema(
         //     type: String,
             
         // },
-        // cart: [{cartSchema}],
+        cart: [Cart.schema],
     },
 
 

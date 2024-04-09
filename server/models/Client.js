@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const cartSchema = require('./Cart');
+
 
 
 
@@ -20,7 +20,7 @@ const clientSchema = new Schema(
             type: String,
             
         },
-        cart: [{cartSchema}]
+       
 
 
 

@@ -1,4 +1,5 @@
-const { User, Product, Client } = require('../models');
+const { User, Product, Client, Cart } = require('../models');
+const { add } = require('../models/Cart');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const bcrypt = require('bcrypt');
 
@@ -91,6 +92,15 @@ const resolvers = {
                 { new: true }
             );
             return updatedUser;
+        },
+        addToCart: async (parent, { product }, context) => {
+            if (!context.user) {
+                throw new AuthenticationError('You must be logged in to perform this action');
+            }
+
+            const cart = new Cart({ product });
+
+            await User.findByIdAndUpdate(context.user._id, { $push: { cart: cart } });
         },
     },
 };
