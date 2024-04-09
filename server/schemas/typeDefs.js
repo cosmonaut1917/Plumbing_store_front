@@ -6,10 +6,9 @@ const typeDefs = `
     username: String!
     email: String!
     password: String
-    firstname: String
-    lastname: String
-    contact: String
-    cart: [Cart]
+    
+    phone: String!
+    admin: Boolean
   }
 type Admin {
     adminId: ID
@@ -19,18 +18,24 @@ type Admin {
     bid: [Bid]
 
 }
-
+type Client {
+    _id: ID
+    firstname: String!
+    lastname: String!
+    contact: String
+    cart: [Cart]
+}
 type Bid {
     bidId: ID
     product: [Product]
     total: Int!
-    
+    client: Client
 }
 type Cart {
     cartId: ID
     product: [Product]
     total: Int!
-    
+    client: Client
 }
 type Product {
     _id: ID
@@ -59,18 +64,18 @@ input ProductInput {
     me: User
     products: [Product]
     product(_id: ID!): Product
-    
+    clients: [Client]
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!, phone: String!): Auth
+    addUser(username: String!, email: String!, password: String!, phone: String!, admin: Boolean): Auth
     updateUser(_id: ID!, username: String, email: String, phone: String, admin: Boolean): User
     deleteUser(_id: ID!): User
 
     login(email: String!, password: String!): Auth
 
     addProduct(productname: String!, description: String!, price: Float!, stock: Int!, image: String): Product
-    addToCart(productArray: [ProductInput]!): User
+    addToCart(product: ProductInput!): Client
     addProfile(firstname: String!, lastname: String!, contact: String): User
 
   }

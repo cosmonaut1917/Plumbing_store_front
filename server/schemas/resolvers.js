@@ -1,4 +1,4 @@
-const { User, Product } = require('../models');
+const { User, Product, Client } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const bcrypt = require('bcrypt');
 
@@ -22,7 +22,6 @@ const resolvers = {
         product: async (parent, { _id }) => {
             return Product.findOne({ _id });
         },
-
         clients: async () => {
             return Client.find();
         }
@@ -55,33 +54,6 @@ const resolvers = {
         deleteUser: async (parent, { _id }) => {
             return User.findByIdAndDelete(_id);
         },
-
-//         updateUser: async (parent, {_id, username, email, password, phone}) => {
-//             const update = {};
-//             if (username) update.username = username;
-//             if (email) update.email = email;
-//             if (phone) update.phone = phone;
-//             // if (admin) update.admin = admin;
-//             if (password) {
-//                 // Hash the new password before saving it
-//                 const salt = await bcrypt.genSalt(10);
-//                 update.password = await bcrypt.hash(password, salt);
-//             }
-            
-
-//             // Update the user in the database
-//             if (context.user){
-//                 const updatedUser = await User.findByIdAndUpdate(
-//                { _id: context.user._id},
-//                 { $set: {username, email,firstname, lastname, contact} }, 
-//                 { new: true } // Return the updated document
-//             );
-//             return updatedUser;
-//             }
-            
-
-//            throw new AuthenticationError('You need to be logged in!');
-
 
         updateUser: async (parent, { _id, username, email, password, phone, admin }) => {
             try{
@@ -120,16 +92,6 @@ const resolvers = {
             );
             return updatedUser;
         },
-   
-        
-        addToCart: async (parent, { productArray }, context) => {
-            if (context.user) {
-                const updatedUser = await User.findOneAndUpdate({_id: context.user._id}, { $push: {cart: [productArray]} }, { new: true });
-                console.log(updatedUser);
-                return updatedUser;
-            } 
-            throw new AuthenticationError('You need to be logged in!');
-        }
     },
 };
 

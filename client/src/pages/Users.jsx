@@ -30,12 +30,6 @@ function Users() {
     }catch (error){
       console.error('Error attempting to delete user',error)
     }
-
-    // try {
-    //   refetch()
-    // } catch (error) {
-    //   console.error('Error attempting to refetch user',error)
-    // }
     
   }
 
@@ -46,12 +40,6 @@ function Users() {
       console.error('Error attempting to promote user to admin',error)
     }
 
-    // try {
-    //   refetch()
-    // } catch (error) {
-    //   console.error('Error attempting to refetch user',error)
-    // }
- 
   }
 
 

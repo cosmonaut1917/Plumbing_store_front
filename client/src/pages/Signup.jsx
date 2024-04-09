@@ -97,19 +97,6 @@ function Signup() {
                         required
                     />
                 </div>
-                <div>
-                    {/* <label className="label" htmlFor="password">Password:</label> */}
-                    <input
-                    className="input-field"
-                        placeholder='Confirm your Password'
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
 
                 <div>
                     <button type="submit">Submit</button>
