@@ -22,13 +22,13 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await getUser({ variables: { username: formData.username } });
+    setIsAdmin(data.user.admin)
   };
 
   const handleLogout = async (event) =>{
     event.preventDefault()
     AuthService.logout()
     setIsLoggedIn(false)
-    setIsAdmin(false)
   }
 
  
